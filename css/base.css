@@ -1,0 +1,78 @@
+header{
+	background-color: #4284f5;
+}
+
+header ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: flex-start;
+}
+
+header ul li {
+	margin-right: 20px;
+}
+
+header, ul, li, a{
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+}
+
+ul li a:hover{
+	color: gray;
+}
+
+footer{
+	background-color: #4284f5;
+	padding: 20px 0;
+	width: 100%;
+}
+
+p, h1, h2, h3, a, li, button{
+	margin-left: 20px;
+	color: black;
+}
+html, body{
+	background-color: #e1e1e1;
+	font-family: "Consolas", sans-serif;
+	height: 100%;
+	margin: 0;
+}
+
+main{
+	flex-grow: 1;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+button{
+	background-color: #4384f5;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	font-family: "Consolas", sans-serif;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-list a:hover{
+	transform: translateY(-2px);
+	background-color: #29549e;
+}
+
+.button-list a:active{
+	transform: translateY(0);
+	background-color: #10427d;
+}
+
+a:visited{
+	color: black;
+}
