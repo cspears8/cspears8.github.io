@@ -17,7 +17,7 @@
 	display: inline-block;
 	margin: 10px;
 }
-.button-list a {
+.button-list li a {
 	background-color: #4384f5;
 	padding: 10px 15px;
 	border: none;

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 0 Blog</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="../css/base.css"> <!-- Link to external CSS -->
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
-        <h1>Connor Spears: UI Programmer</h1>
-		<h2>Sprint 0 Blog</h2>
+        <h1>{{ page.title }}</h1>
+		<h2>{{ page.date }}</h2>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,14 +20,9 @@
         </nav>
     </header>
 
-    <!-- Intro Section -->
+    <!-- Main Blog -->
     <main>
-        <!-- Intro -->
-        <article>
-            <h2>Sprint 0 Detailed Blog</h2>
-            <p><em>Date 9/26/24</em></p>
-            <p>Here is some placeholder text for my Sprint 0 Blog</p>
-        </article>
+        {{ content }}
     </main>
 
     <!-- Footer Section -->
