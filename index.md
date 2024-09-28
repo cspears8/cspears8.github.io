@@ -22,7 +22,7 @@ title: "Connor Spears: UI Programmer"
 	<h2>Sprint 0 Blog</h2>
 	<p><em>Date 9/26/24</em></p>
 	<p>During this sprint I completed a technical interview, met my teammates, and made this website!</p>
-	<a href="{{ './blog/2024/09/26/sprint0Blog.html/' | relative_url }}" class="read-more">Read More</a>
+	<a href="{{ '/blog/2024/09/26/sprint0Blog.html/' | relative_url }}" class="read-more">Read More</a>
 <!-- For later Sprints -->
 <!-- </div>
 	<div id="sprint1" class="sprint-content" style="display: none;">
