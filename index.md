@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Connor Spears: UI Programmer
+title: "Connor Spears: UI Programmer"
 ---
 
 <!-- Intro Section -->
@@ -12,17 +12,17 @@ title: Connor Spears: UI Programmer
 
 <!-- Blog List Section -->
 <div class="tabbed-navigation">
-	<button class="button-list" onclick="showSprint(0)">Sprint 0</button>
+	<button class="sprint-button" onclick="showSprint(0)">Sprint 0</button>
 	<!-- For later Sprints -->
 	<!--<button class="button-list" onclick="showSprint(1)">Sprint 1</button>
 	<button class="button-list" onclick="showSprint(2)">Sprint 2</button>-->
 </div>
 
-<div id="sprint0" class="sprint-content">
+<div id="sprint0" class="sprint-content" style="display: none;">
 	<h2>Sprint 0 Blog</h2>
 	<p><em>Date 9/26/24</em></p>
 	<p>During this sprint I completed a technical interview, met my teammates, and made this website!</p>
-	<a href="sprint0-blog.html" class="read-more">Read More</a>
+	<a href="{{ '/blog/2024/09/26/sprint0Blog/' | relative_url }}" class="read-more">Read More</a>
 <!-- For later Sprints -->
 <!-- </div>
 	<div id="sprint1" class="sprint-content" style="display: none;">

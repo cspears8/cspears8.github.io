@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="../css/base.css"> <!-- Link to external CSS -->
+	<link rel="stylesheet" href="{{ '/css/base.css' | relative_url }}">
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
         <h1>{{ page.title }}</h1>
-		<h2>{{ page.date }}</h2>
+		<h2>{{ page.date | date: "%B %d, %Y" }}</h2>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+				<li><a href="{{ '/' | relative_url }}">Home</a></li>
+				<li><a href="{{ '/about.html' | relative_url }}">About</a></li>
             </ul>
         </nav>
     </header>
