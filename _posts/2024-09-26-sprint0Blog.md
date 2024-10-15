@@ -233,9 +233,10 @@ Quickly, our team planned a Discord call to establish a genre. We had tossed aro
 We tried to find a theme for this particular genre that would be fun, I initially threw around post-apocalyptic, space, and even small scale nuclear power plant simulation. Nadav mentioned that he liked fantasy and sci-fi art, this helped us find the fantasy theme as we couldn't find any other games in the same lane as that.
 
 ### Research (2h)
-After our meeting I spent some time looking at the games in these genres and found a couple underlying principles: growth, creativity, and unexpected events. As well as doing research into the design I also researched the programming side. There is a huge and famous [tutorial](https://catlikecoding.com/unity/tutorials/hex-map/) for hex maps in Unity which I looked into and messed with a bit to get familiar with the structure. Below are some images I used as reference:
-![SimCity](../files/simCity.jpg)
-![Baldur's Gate 3](../files/Lower_City.jpg)
+After our meeting I spent some time looking at the games in these genres and found a couple underlying principles: growth, creativity, and unexpected events. As well as doing research into the design I also researched the programming side. There is a huge and famous [tutorial](https://catlikecoding.com/unity/tutorials/hex-map/){: .post-link} for hex maps in Unity which I looked into and messed with a bit to get familiar with the structure. Below are some images I used as reference:
+
+![SimCity]({{ site.baseurl }}/files/simCity.jpg){: .post-image}
+![Baldur's Gate 3]({{ site.baseurl }}/files/Lower_City.jpg){: .post-image}
 
 ### R&D Meeting 10/5/24 (1h)
 This meeting was much more focused on planning out the main requirements for the game as well as the lore of the game. We settled on the idea of the player finding a dragon heart which powers their city, and having dragon fossils be acquired to serve as the main "upgrades" for the player. Main requirements included a building system with UI, 6 different structures for different functions, a currency system, character concepts, and progression systems.

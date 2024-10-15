@@ -45,7 +45,7 @@ main{
 	flex-grow: 1;
 }
 
-.blog-content{
+.blog-content *{
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 0 20px;
@@ -55,6 +55,18 @@ body{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.post-image{
+	max-width: 500px;
+	max-height: 300px;
+	width: auto;
+	height: auto;
+}
+
+.post-link{
+	text-decoration: underline;
+	color: cyan;
 }
 
 button{

@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/files/Lower_City.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/simCity.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2024-09-26-sprint0Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-09-26-sprint0Blog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/blog/2024/09/26/sprint0Blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/09/26/sprint0Blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/css/base.css" afterDir="false" />
@@ -93,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728840976724</updated>
       <workItem from="1728840977868" duration="7476000" />
-      <workItem from="1729026553817" duration="5581000" />
+      <workItem from="1729026553817" duration="6381000" />
     </task>
     <servers />
   </component>
