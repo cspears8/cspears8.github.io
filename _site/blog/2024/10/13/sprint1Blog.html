@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 1 Blog</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Sprint 1 Blog</h1>
+        <h2>WolverineSoft Fall 2024</h2>
+        <nav>
+            <ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2 id="introduction">Introduction</h2>
+
+<p>This sprint was spent building out a very basic prototype for what a hexagonal tile map building simulator would look like. I have found my self working in my usual lane of UI programming and design, which I enjoy any ways and there is a lot of it to go about with this project.</p>
+
+<h2 id="week-one">Week One</h2>
+
+<h3 id="basic-control-ui-3hr">Basic Control UI (3hr)</h3>
+<p>Once Gavin finished the prototype for the building system I looked over his code and was quite impressed with the system he had created. I spent some time messing around with it to learn how I can use it efficiently in my UI code. I noticed that there was no way to switch between building, destroying, or just clicking buildings. I added this in the form of a dropdown menu in Unity, I have never used dropdowns before, but they were quite simple to learn. Basically, each selection is an int whose value is represented by the spot in the dropdown list, you can simply use that integer to call specific functions, I used a simple switch statement as you can see here:</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Runtime.ConstrainedExecution</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine.Serialization</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">ModeEdit</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="k">private</span> <span class="n">Structure</span> <span class="n">defaultBuilding</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="k">private</span> <span class="n">GameObject</span> <span class="n">TypeList</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ChangeMode</span><span class="p">(</span><span class="kt">int</span> <span class="n">modeIndex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">modeIndex</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+                <span class="n">BuildingManager</span><span class="p">.</span><span class="n">DisableEditing</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">();</span>
+                <span class="n">TypeList</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+                <span class="n">BuildingManager</span><span class="p">.</span><span class="n">EnableBuilding</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">(</span><span class="n">defaultBuilding</span><span class="p">);</span>
+                <span class="n">TypeList</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+                <span class="n">BuildingManager</span><span class="p">.</span><span class="n">EnableDeleting</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">();</span>
+                <span class="n">TypeList</span><span class="p">.</span><span class="nf">SetActive</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="n">Debug</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="s">"Mode index at index "</span> <span class="p">+</span> <span class="n">modeIndex</span> <span class="p">+</span> <span class="s">" is out of range!"</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The next task I had was to allow the player to switch between the current building the player wanted to build. This was quite easy as we can just use buttons which will switch the currentStructure variable in the BuildingSystem script to whatever prefab we want. I made sure to hide this UI unless the player was in build mode. This will be refactored later on in the sprint to instead be an entire menu that pops up with building information and costs for every building. Here is a screenshot of how it all looks:</p>
+
+<p><img src="/files/PrelimUI.PNG" alt="UI Screencap" class="post-image" /></p>
+
+<h2 id="weekly-meeting-3-1h-30min">Weekly Meeting #3 (1h 30min)</h2>
+<p>This week’s meeting was online due to the fall break, we instead had a Discord meeting to discuss our current progress. I asked Gavin questiosn about his building system and discussed my new UI. Nadav was running late, but we talked about art plans for him (getting building tiles). My next tasks are to add hotkey controls instead of UI elements, continue refining the UI, creating a preliminary building purchase menu, documentation work, as well as writing this very devlog. Gavin will work on getting buildings to do different things, at least have different variables and whatnot so we can implement some functionality before the end of the month.</p>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Connor Spears. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSprint(sprintNumber){
+            const sprints = document.querySelectorAll('.sprint-content');
+            sprints.forEach(sprint => {
+                sprint.style.display = 'none';
+            });
+            document.getElementById('sprint' + sprintNumber).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

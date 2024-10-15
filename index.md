@@ -13,9 +13,8 @@ title: "Connor Spears: UI Programmer"
 <!-- Blog List Section -->
 <div class="tabbed-navigation">
 	<button class="sprint-button" onclick="showSprint(0)">Sprint 0</button>
-	<!-- For later Sprints -->
-	<!--<button class="button-list" onclick="showSprint(1)">Sprint 1</button>
-	<button class="button-list" onclick="showSprint(2)">Sprint 2</button>-->
+	<button class="sprint-button" onclick="showSprint(1)">Sprint 1</button>
+	<!--<button class="sprint-button" onclick="showSprint(2)">Sprint 2</button>-->
 </div>
 
 <div id="sprint0" class="sprint-content" style="display: none;">
@@ -23,14 +22,14 @@ title: "Connor Spears: UI Programmer"
 	<p><em>Date 9/26/24</em></p>
 	<p>During this sprint I completed a technical interview, met my teammates, and made this website!</p>
 	<a href="{{ '/blog/2024/09/26/sprint0Blog.html' | relative_url }}" class="read-more">Read More</a>
-<!-- For later Sprints -->
-<!-- </div>
-	<div id="sprint1" class="sprint-content" style="display: none;">
+</div>
+<div id="sprint1" class="sprint-content" style="display: none;">
 	<h2>Sprint 1 Blog</h2>
 	<p><em>Date 9/26/24</em></p>
-	<p>A brief overview of Sprint 1's objectives and outcomes.</p>
-	<a href="sprint1-blog.html" class="read-more">Read More</a>
+	<p>During sprint 1 we created a preliminary prototype for our game!</p>
+	<a href="{{ '/blog/2024/10/13/sprint1Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
+<!-- For Later Sprints
 <div id="sprint2" class="sprint-content" style="display: none;">
 	<h2>Sprint 2 Blog</h2>
 	<p><em>Date 9/26/24</em></p>
