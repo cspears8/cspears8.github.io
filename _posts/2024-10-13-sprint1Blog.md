@@ -52,5 +52,8 @@ The next task I had was to allow the player to switch between the current buildi
 
 ![UI Screencap]({{ site.baseurl }}/files/PrelimUI.PNG){: .post-image}
 
-## Weekly Meeting #3 (1h 30min)
+### Weekly Meeting #3 (1hr 30min)
 This week's meeting was online due to the fall break, we instead had a Discord meeting to discuss our current progress. I asked Gavin questiosn about his building system and discussed my new UI. Nadav was running late, but we talked about art plans for him (getting building tiles). My next tasks are to add hotkey controls instead of UI elements, continue refining the UI, creating a preliminary building purchase menu, documentation work, as well as writing this very devlog. Gavin will work on getting buildings to do different things, at least have different variables and whatnot so we can implement some functionality before the end of the month.
+
+### Devlog Madness (3hr)
+After our meeting on Sunday, I spent a good portion of time in the afternoon trying to write my devlogs. I was inspired by Gavin who was using React to add stuff like interactive images and code files to his blogs. Having never used React and having this website already set up as a Jekyll site was a recipe for disaster. I spent 3 hours trying to understand the API for React while simultaneously trying to implement it to a project that wasn't built with it in mind. After failing to get code files to load as objects I simply gave up, thinking that React was far too complex for what I needed here, as well as a huge headache to alter the entire structure of the website.
