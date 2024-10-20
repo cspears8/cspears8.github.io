@@ -57,3 +57,83 @@ This week's meeting was online due to the fall break, we instead had a Discord m
 
 ### Devlog Madness (3hr)
 After our meeting on Sunday, I spent a good portion of time in the afternoon trying to write my devlogs. I was inspired by Gavin who was using React to add stuff like interactive images and code files to his blogs. Having never used React and having this website already set up as a Jekyll site was a recipe for disaster. I spent 3 hours trying to understand the API for React while simultaneously trying to implement it to a project that wasn't built with it in mind. After failing to get code files to load as objects I simply gave up, thinking that React was far too complex for what I needed here, as well as a huge headache to alter the entire structure of the website.
+
+## Week Two
+
+### Input System Upgrade (3hr)
+I was going to get started on the building purchase screen, when I noticed that how the inputs were being tracked (specifically for the camera movement) was sort of inefficient. The camera control design was supposed to be clicking and dragging the mouse to move the camera, Gavin initially implemented this. Looking at his code he was using the Event System and a state machine to set the mouse to 3 different states: None, Waiting, and Dragging. The waiting state was activated when the user held down the mouse button but didn't move it yet, this was simply there to transition into the dragging state. When the user dragged, the difference in where the pointer was to where it is now was calculated and used to move the camera. This worked, and had things like bounds and smoothness; however, when I looked I noticed that every function was being checked in the Update function which I thought was inefficient. To fix this I transitioned into using the new Unity Input System which allows us to name and set input events for anything we want, this allowed me to create events that happen when the user presses the mouse down and when the user releases the mouse. It should be noted that clicking the mouse is one action defined as a press down and a release of the mouse button, so I defined events for the down and up respectively, not the click. When the user presses down, the waiting state is initiated, which allows the user to drag the camera. When they release the mouse the none state is initiated. Changing the code structure and input system allows us to not have to check for these inputs every frame and only activate them when the user takes the action. Here is a snippet of that script:
+```csharp
+private void OnEnable()
+{
+    playerInput = GetComponent<PlayerInput>();
+
+    clickAction = playerInput.actions["Select"];
+    zoomAction = playerInput.actions["Zoom"];
+
+    //Define functions for when each action is taken
+    clickAction.started += _ => OnClickPerformed();
+    clickAction.canceled += _ => OnClickReleased();
+    zoomAction.performed += ctx => HandleScrollInput(ctx.ReadValue<Vector2>().y * zoomScale);
+}
+
+private void OnDisable()
+{
+    //remove functions for when each action is taken
+    clickAction.started -= _ => OnClickPerformed();
+    clickAction.canceled -= _ => OnClickReleased();
+    zoomAction.performed -= ctx => HandleScrollInput(ctx.ReadValue<Vector2>().y * zoomScale);
+}
+
+private void Update()
+{
+    if (Application.isFocused)
+    {
+        //Changed from Input.MousePosition and calculate every frame since it's used a lot
+        mousePos = Mouse.current.position.ReadValue();
+        
+        //If we are already dragging, or the criteria to start dragging is met then drag 
+        if (state == MouseState.Waiting && (mousePos - clickPos).magnitude > dragThreshold)
+        {
+            state = MouseState.Dragging;
+        }
+        if (state == MouseState.Dragging)
+        {
+            DraggingState();
+        }
+        SmoothZoom();
+        BoundCamera();
+
+    }
+}
+
+//Sets waiting when user clicks
+private void OnClickPerformed()
+{
+    clickPos = mousePos;
+    state = MouseState.Waiting;
+}
+
+//Called only when user releases the mouse click
+private void OnClickReleased()
+{
+    if (state==MouseState.Waiting)
+    {
+        mouseClick.Invoke();
+    }
+    state = MouseState.None;
+}
+```
+A bug that we had regarding this was when the user clicked a tile when intending to drag the mouse, they may end up building or deleting the structure that the mouse was over when the mouse was released. This was caused because I had used clickAction.performed instead of clickAction.started, resulting in the waiting state overriding the dragging state every frame. When it was overridden the logic for OnClickReleased() did not work as intended, this was because the mouse state was always waiting when the mouse was released instead of only when the mouse was not moving (dragging).
+
+I had to also make some minor changes to the BuildingManager and the ModeEdit scripts to work with the new input system. I made some extra minor adjustments to the ModeEdit to allow the user to switch modes using hot keys (Q, W, E) instead of requiring the use of the dropdown menu.
+An interesting change in the BuildingManager was allowing the user to navigate the UI without the tile map thinking it was being selected. This was surprisingly solved by one line of code, we set a boolean every frame to check if the cursor is on a UI object, that boolean is then used in the interact script and immediately returns when true:
+```csharp
+isOverUI = EventSystem.current.IsPointerOverGameObject();
+```
+### Discord Meeting #3 (1hr)
+This meeting was mostly spent working on a slideshow that we had to make to present to the rest of the studio during the next meeting. This slideshow contained info about our project from the design, art, story, and programming fields. It also contained requirements that we have for the prototype and where we are currently at in the process of building the pre-alpha for testing at the end of the month.
+
+### Weekly Meeting #4 (2hr)
+During this meeting we had some time to work and discuss where the project is at with not only each other but with the other R&D team who are working on a beat-em-up inspired mainly by Castle Crashers, but also older games in the genre like Final Fight. We showcased our project and took some questions, it went well. The main thing we have to figure out as a team about the design is if we are going to have adventurers or use a quarry for the main progression of finding Dragon Fossils. Afterwords we had a quick discussion with our Studio Director about the Game Developer's Conference (GDC) which is happening next March. I have always wanted to go and the studio is currently fundraising to get a group of students to go, but I am not a UofM student and will be graduating in December so it's complicated. I am currently in the process of applying to work for GDC which gives me an all access pass and pays me to work. Otherwise, we didn't have much else to discuss, just working on and discussing the project.
+
+## Total Time Spent: 13hr 30min + 2hr 30min for Devlogs

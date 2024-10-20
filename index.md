@@ -19,13 +19,13 @@ title: "Connor Spears: UI Programmer"
 
 <div id="sprint0" class="sprint-content" style="display: none;">
 	<h2>Sprint 0 Blog</h2>
-	<p><em>Date 9/26/24</em></p>
+	<p><em>Date 09/22/24 - 10/06/24</em></p>
 	<p>During this sprint I completed a technical interview, met my teammates, and made this website!</p>
 	<a href="{{ '/blog/2024/09/26/sprint0Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
 <div id="sprint1" class="sprint-content" style="display: none;">
 	<h2>Sprint 1 Blog</h2>
-	<p><em>Date 9/26/24</em></p>
+	<p><em>Date 10/06/24 - 10/20/24</em></p>
 	<p>During sprint 1 we created a preliminary prototype for our game!</p>
 	<a href="{{ '/blog/2024/10/13/sprint1Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
