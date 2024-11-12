@@ -83,3 +83,55 @@ The next step was to design what the buildings would do, I had a lot of fund doi
 
 ### Weekly Meeting #5 (2hr)
 We didn't have a Discord meeting this week as we were all pretty set on what we were working on. During our studio meeting we discussed the next steps, I would program the different buildings, implementing their designs through script. Gavin would continue working on the questing system. If both of these things could be implemented by our next meeting we would have a fantastic alpha prototype build to get testing feedback on. Most of the main systems would be in the game in at least a prototype state. The whole studio got our pictures taken, and we ended up working more on the project. Later in the meeting our director Connor Chen discussed our progress with us and seemed really impressed by what we had so far, that put us in a good frame of mind for the rest of the week. We discussed our project with the other R&D team who seemed to be having a lot of struggles with their project and the direction it was going in which also made us feel better.
+
+## Week Two
+
+### Contractor Implementation and Upgrade Framework (6hr)
+I was tasked with implementing the upgrades and putting their data into some sort of database. I started by creating child classes based on the main building class for each building in the game. I then defined an upgrade dictionary for each building, as well as an event handler called OnUpgrade that applies upgrades for a building when the UpgradeEvent is invoked. For buildings like the contractor which produce materials I had to register them in the ResourceManager, this calls a coroutine which produces that resource at a set interval. Here's the code for the contractor as an example:
+```csharp
+public class Contractor : Building
+{
+    private int stoneProduction = 1;
+    private List<float> buildingLevelCosts = new List<float>{ -1f, -1f, -1f, -1f, -1f };
+
+    void Start()
+    {
+        UpgradeEvent.AddListener(OnUpgrade);
+        rm.RegisterBuilding(this, new Resources(0,0, stoneProduction, 0));
+    }
+
+    /* Holds all the data for each upgrade(-1 means that level is not unlocked yet)
+     * Ideally this would be stored somewhere rather than just a dictionary, SOs don't work afaik
+    */
+    private Dictionary<int, (int stoneProduction, List<float> buildingLevelCosts)> upgradeData = new()
+    {
+        {1, (1, new List<float>{1.0f, -1.0f, -1.0f, -1.0f, -1.0f}) },
+        {2, (2, new List<float>{0.8f, 1.0f, -1.0f, -1.0f, -1.0f}) },
+        {3, (4, new List<float>{0.6f, 0.8f, 1.0f, -1.0f, -1.0f}) },
+        {4, (8, new List<float>{0.6f, 0.6f, 0.8f, 1.0f, -1.0f}) },
+        {5, (16, new List<float>{0.6f, 0.6f, 0.6f, 0.8f, 1.0f}) },
+    };
+
+    public override BuildingType type => BuildingType.Contractor;
+
+    //Defines what to do when an upgrade is purchased
+    private void OnUpgrade(Upgrade upgrade, int newLevel)
+    {
+        if (upgradeData.TryGetValue(newLevel, out var upgradeValues))
+        {
+            stoneProduction = upgradeValues.stoneProduction;
+            buildingLevelCosts = upgradeValues.buildingLevelCosts;
+            Debug.Log($"Contractor upgraded to level {level}: stoneProduction = {stoneProduction}");
+        }
+        else
+        {
+            Debug.LogError($"Invalid upgrade level {newLevel} for Contractor.");
+        }
+    }
+}
+```
+
+### Weekly Meeting #6 (2hr)
+This meeting was our big showcase date, we had a working build of the game which included building structures, deleting them, sending out adventurers, and producing resources. We got some good feedback for both our design and UI/UX adjustments which we will be working on in the next sprint. We will continue to get more feedback throughout the coming weeks.
+
+## Total Time Spent: 20hr + 2hr for Devlogs

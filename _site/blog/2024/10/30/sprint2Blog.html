@@ -102,6 +102,57 @@
 <h3 id="weekly-meeting-5-2hr">Weekly Meeting #5 (2hr)</h3>
 <p>We didn’t have a Discord meeting this week as we were all pretty set on what we were working on. During our studio meeting we discussed the next steps, I would program the different buildings, implementing their designs through script. Gavin would continue working on the questing system. If both of these things could be implemented by our next meeting we would have a fantastic alpha prototype build to get testing feedback on. Most of the main systems would be in the game in at least a prototype state. The whole studio got our pictures taken, and we ended up working more on the project. Later in the meeting our director Connor Chen discussed our progress with us and seemed really impressed by what we had so far, that put us in a good frame of mind for the rest of the week. We discussed our project with the other R&amp;D team who seemed to be having a lot of struggles with their project and the direction it was going in which also made us feel better.</p>
 
+<h2 id="week-two">Week Two</h2>
+
+<h3 id="contractor-implementation-and-upgrade-framework-6hr">Contractor Implementation and Upgrade Framework (6hr)</h3>
+<p>I was tasked with implementing the upgrades and putting their data into some sort of database. I started by creating child classes based on the main building class for each building in the game. I then defined an upgrade dictionary for each building, as well as an event handler called OnUpgrade that applies upgrades for a building when the UpgradeEvent is invoked. For buildings like the contractor which produce materials I had to register them in the ResourceManager, this calls a coroutine which produces that resource at a set interval. Here’s the code for the contractor as an example:</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Contractor</span> <span class="p">:</span> <span class="n">Building</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">stoneProduction</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;</span> <span class="n">buildingLevelCosts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span> <span class="p">-</span><span class="m">1f</span><span class="p">,</span> <span class="p">-</span><span class="m">1f</span><span class="p">,</span> <span class="p">-</span><span class="m">1f</span><span class="p">,</span> <span class="p">-</span><span class="m">1f</span><span class="p">,</span> <span class="p">-</span><span class="m">1f</span> <span class="p">};</span>
+
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">UpgradeEvent</span><span class="p">.</span><span class="nf">AddListener</span><span class="p">(</span><span class="n">OnUpgrade</span><span class="p">);</span>
+        <span class="n">rm</span><span class="p">.</span><span class="nf">RegisterBuilding</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">new</span> <span class="nf">Resources</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span> <span class="n">stoneProduction</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Holds all the data for each upgrade(-1 means that level is not unlocked yet)
+     * Ideally this would be stored somewhere rather than just a dictionary, SOs don't work afaik
+    */</span>
+    <span class="k">private</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span> <span class="n">stoneProduction</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;</span> <span class="n">buildingLevelCosts</span><span class="p">)&gt;</span> <span class="n">upgradeData</span> <span class="p">=</span> <span class="k">new</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">})</span> <span class="p">},</span>
+        <span class="p">{</span><span class="m">2</span><span class="p">,</span> <span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span><span class="m">0.8f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">})</span> <span class="p">},</span>
+        <span class="p">{</span><span class="m">3</span><span class="p">,</span> <span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span><span class="m">0.6f</span><span class="p">,</span> <span class="m">0.8f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">})</span> <span class="p">},</span>
+        <span class="p">{</span><span class="m">4</span><span class="p">,</span> <span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span><span class="m">0.6f</span><span class="p">,</span> <span class="m">0.6f</span><span class="p">,</span> <span class="m">0.8f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0f</span><span class="p">})</span> <span class="p">},</span>
+        <span class="p">{</span><span class="m">5</span><span class="p">,</span> <span class="p">(</span><span class="m">16</span><span class="p">,</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">float</span><span class="p">&gt;{</span><span class="m">0.6f</span><span class="p">,</span> <span class="m">0.6f</span><span class="p">,</span> <span class="m">0.6f</span><span class="p">,</span> <span class="m">0.8f</span><span class="p">,</span> <span class="m">1.0f</span><span class="p">})</span> <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="k">public</span> <span class="k">override</span> <span class="n">BuildingType</span> <span class="n">type</span> <span class="p">=&gt;</span> <span class="n">BuildingType</span><span class="p">.</span><span class="n">Contractor</span><span class="p">;</span>
+
+    <span class="c1">//Defines what to do when an upgrade is purchased</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnUpgrade</span><span class="p">(</span><span class="n">Upgrade</span> <span class="n">upgrade</span><span class="p">,</span> <span class="kt">int</span> <span class="n">newLevel</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">upgradeData</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">newLevel</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">upgradeValues</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">stoneProduction</span> <span class="p">=</span> <span class="n">upgradeValues</span><span class="p">.</span><span class="n">stoneProduction</span><span class="p">;</span>
+            <span class="n">buildingLevelCosts</span> <span class="p">=</span> <span class="n">upgradeValues</span><span class="p">.</span><span class="n">buildingLevelCosts</span><span class="p">;</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="s">$"Contractor upgraded to level </span><span class="p">{</span><span class="n">level</span><span class="p">}</span><span class="s">: stoneProduction = </span><span class="p">{</span><span class="n">stoneProduction</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="s">$"Invalid upgrade level </span><span class="p">{</span><span class="n">newLevel</span><span class="p">}</span><span class="s"> for Contractor."</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="weekly-meeting-6-2hr">Weekly Meeting #6 (2hr)</h3>
+<p>This meeting was our big showcase date, we had a working build of the game which included building structures, deleting them, sending out adventurers, and producing resources. We got some good feedback for both our design and UI/UX adjustments which we will be working on in the next sprint. We will continue to get more feedback throughout the coming weeks.</p>
+
+<h2 id="total-time-spent-20hr--2hr-for-devlogs">Total Time Spent: 20hr + 2hr for Devlogs</h2>
+
     </main>
 
     <!-- Footer Section -->

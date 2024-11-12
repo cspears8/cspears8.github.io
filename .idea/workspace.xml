@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2024-10-30-sprint2Blog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2024-11-10-sprint3Blog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/10/13/sprint1Blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/10/13/sprint1Blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2024-10-30-sprint2Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-10-30-sprint2Blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2024/10/30/sprint2Blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/10/30/sprint2Blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
@@ -92,7 +93,9 @@
       <workItem from="1728840977868" duration="7476000" />
       <workItem from="1729026553817" duration="9595000" />
       <workItem from="1729438892922" duration="4328000" />
-      <workItem from="1730241322143" duration="9217000" />
+      <workItem from="1730241322143" duration="10421000" />
+      <workItem from="1730585802827" duration="22000" />
+      <workItem from="1731351725720" duration="8632000" />
     </task>
     <servers />
   </component>
