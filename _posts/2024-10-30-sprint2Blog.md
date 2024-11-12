@@ -67,7 +67,7 @@ public class BuildingMenu : MonoBehaviour
 }
 ```
 
-![Building UI Screencap]({{ site.baseurl }}/files/buildingUI.PNG){: .post-image}
+![Building UI Screencap]({{ site.baseurl }}/files/buildingUI.png){: .post-image}
 
 ### Discord Meeting #4 (1hr)
 This was a quick meeting where Gavin and I discussed our progress throughout the week. I showed off my UI while he explained his work on the hex traversal system. The hex traversal system is super impressive, but I definitely don't understand all the math behind that. We figured out what comes next, Gavin will continue working on the pathfinding and getting characters to move across the paths, while I will make designs for each building (cost, effect, levels, etc.) in Notion.
