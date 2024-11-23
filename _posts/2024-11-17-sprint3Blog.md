@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sprint 3 Blog"
-data: 2024-11-10
+data: 2024-11-17
 categories: blog
 ---
 ## Introduction
@@ -74,6 +74,17 @@ This meeting was pretty laid back, we did some play testing, and assigned tasks 
 
 ## Week Two
 
-### Work in Progress!
+### Warning UI (4hr)
+I did not have much time this week to work on the project due to school work as the end of the semester looms. I did however build a warning UI and implement it into the game when a building was clicked to be destroyed. This was built to ensure that players knew that destroying a building was permanent and how much they would be refunded for doing so. There is also additional text for when the player tries to destroy a wizard tower, it mentions that structures in the range of only that tower will also be deleted. This whole addition was quite simple and fun with designing the UI and getting all the elements to work correctly. The most difficult part was actually dealing with some merge conflicts that resulted from me foolishly not working in a temporary scene. Here is what the finished product looked like:
 
-### Total Time Spent: 7hr 30min + 1hr for Devlogs
+![Destroy Warning UI]({{ site.baseurl }}/files/destroyWarningUI.png){: .post-image}
+
+### Discord Meeting #6 (1hr)
+That same night after finishing my warning UI we had a Discord meeting to discuss progress, make an update slideshow for the next meeting, and figure out some designs. I asked Gavin about how we should go about making the farms work, that was one of my tasks this week that I didn't have time to get around to. My original idea was to get reference to the nearest wizard tower and boost production of all the buildings within that tower's range. This was very complex as we didn't have a way to get the towers in that way, just checking if buildings are in range or out of range in general. Gavin had a great idea of just giving the farms their own range and adding that on top of the range system we already had, this was much simpler, although I still think my original idea was more interesting for gameplay purposes. I thought my idea incentivized players to place farms on the outskirts of town which is how real societies work. Gavin's idea is much more implementable with the time we have left though so I decided to go with that. Other than that we worked on the slides and got ready for the next meeting.
+
+### Weekly Meeting #7 (2hr)
+We had another production update presentation this week, Gavin implemented the art we had from Nadav at the last minute which looks amazing. Gavin showed off his work on the town range as well as dungeon levels, while I talked about the UI dictionary manager, wood production, and warning UI which I worked on. We only have a couple of weeks left so we are reaching the cutting room floor with some features. While we have designs in for the upgrades, I don't think we will get to the point where we can implement them. We also might not have time to get the smithy working, we will have to see. Other than that what is left is the farm implementation, a simple main menu, some music/SFX, a couple more art assets, a dungeon mini map for progress, and a more robust rewards system for the dungeons. With 2.5 weeks of development left I think we are in a good spot to get these tasks done and maybe a couple of others. The rest of our meeting was spent doling out tasks for the week and seeing what we can do with the rest of our development time. I was tasked with getting the farm to work (spawn trees, and increase the production rate of other buildings) and getting a simple main menu into the game. Below is an image of our updated art in game!
+
+![Art Implementation]({{ site.baseurl }}/files/artImplementation1.png){: .post-image}
+
+### Total Time Spent: 14hr 30min + 1hr 30min for Devlogs

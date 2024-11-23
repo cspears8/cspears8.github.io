@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/10/30/sprint2Blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/10/30/sprint2Blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/11/10/sprint3Blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2024/11/10/sprint3Blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_posts/2024-11-23-sprint4Blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2024-11-10-sprint3Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-11-17-sprint3Blog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,24 +34,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/conno/GitHub/cspears8.github.io&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/conno/AppData/Roaming/JetBrains/WebStorm2024.2/node/versions/20.18.0/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.test.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/conno/GitHub/cspears8.github.io/_posts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/conno/AppData/Roaming/JetBrains/WebStorm2024.2/node/versions/20.18.0/node",
+    "nodejs_package_manager_path": "npm",
+    "npm.test.executor": "Run",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "two.files.diff.last.used.file": "C:/Users/conno/GitHub/cspears8.github.io/_posts/2024-11-17-sprint3Blog.md",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\conno\GitHub\cspears8.github.io\_posts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\conno\GitHub\cspears8.github.io\files" />
     </key>
@@ -93,6 +99,9 @@
       <workItem from="1730585802827" duration="22000" />
       <workItem from="1731351725720" duration="8713000" />
       <workItem from="1731425598353" duration="1923000" />
+      <workItem from="1731612889730" duration="4000" />
+      <workItem from="1731942654630" duration="27000" />
+      <workItem from="1732396876864" duration="2713000" />
     </task>
     <servers />
   </component>

@@ -16,6 +16,7 @@ title: "Connor Spears: UI Programmer"
 	<button class="sprint-button" onclick="showSprint(1)">Sprint 1</button>
 	<button class="sprint-button" onclick="showSprint(2)">Sprint 2</button>
     <button class="sprint-button" onclick="showSprint(3)">Sprint 3</button>
+    <button class="sprint-button" onclick="showSprint(4)">Sprint 4</button>
 </div>
 
 <div id="sprint0" class="sprint-content" style="display: none;">
@@ -32,13 +33,18 @@ title: "Connor Spears: UI Programmer"
 </div>
 <div id="sprint2" class="sprint-content" style="display: none;">
 	<h2>Sprint 2 Blog</h2>
-	<p><em>Date 10/20/24-11/3/24</em></p>
+	<p><em>Date 10/20/24-11/03/24</em></p>
 	<p>This sprint I worked on more UI as well as a lot of systems design.</p>
 	<a href="{{ '/blog/2024/10/30/sprint2Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
 <div id="sprint3" class="sprint-content" style="display: none;">
 	<h2>Sprint 3 Blog</h2>
-	<p><em>Date 11/3/24-11/17/24</em></p>
+	<p><em>Date 11/03/24-11/17/24</em></p>
 	<p>This sprint had me implementing more systems as well as working on feedback from playtesting</p>
-	<a href="{{ '/blog/2024/11/10/sprint3Blog.html' | relative_url }}" class="read-more">Read More</a>
+	<a href="{{ '/blog/2024/11/17/sprint3Blog.html' | relative_url }}" class="read-more">Read More</a>
+<div id="sprint4" class="sprint-content" style="display: none;">
+	<h2>Sprint 4 Blog</h2>
+	<p><em>Date 11/17/24-12/01/24</em></p>
+	<p>Our last sprint revolved around a lot of finishing up of features and polishing</p>
+	<a href="{{ '/blog/2024/11/23/sprint4Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
