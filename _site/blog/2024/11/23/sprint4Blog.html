@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 4 Blog</title>
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Sprint 4 Blog</h1>
+        <h2>WolverineSoft Fall 2024</h2>
+        <nav>
+            <ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2 id="introduction">Introduction</h2>
+
+<p>Well, I suppose this is it. The last sprint. This sprint has revolved around a last minute push to get in the rest of the features we need as well as polish for our final presentation.</p>
+
+<h2 id="week-one">Week One</h2>
+
+<h3 id="farm-implementation-5hr">Farm Implementation (5hr)</h3>
+<p>Since we had discussed the system in our last Discord meeting, I had a pretty good understanding of how I wanted to implement the farm into the game. I largely did not run into any big snags, I augmented the RangeManager script to calculate and assign tiles to a separate FarmRangeTilemap. This was basically done in the same way as the RangeTilemap, the only thing that required changing was the logic for destruction, instead of destroying all the buildings in the range, I just removed their productionMultiplier, also when the farm was built I set the productionMultiplier for that building. Currently, because we don’t have upgrades in the game I just manually set the multiplier to be 4. This will definitely change when we get upgrades for the farm in, which will likely be a big challenge due to how we have set the range up. Other than that, the only problem that exists is that buildings which are in the range of two farms do not work great. Their productionMultiplier is not stacked, which may be good, may not be. Also, if one farm is destroyed the productionMultiplier is reset when it shouldn’t. That will have to be fixed at a later date. 
+Farms also spawn trees at a set rate (45 seconds), this was somewhat easy to develop but was done sort of dirty. I had to get reference to the ObjectTilemap which held the tree tiles, the only way I could get access to that was through a tag when the farm was spawned. This is because the farm script held the logic for spawning trees, but they are just prefabs so they couldn’t hold the reference to the ObjectTilemap, even if the tilemap was made to be a prefab, not sure why to be honest. I also had to add a method to the RangeManager to get all the tiles within the range of a given farm, here is that code:</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Vector3Int</span><span class="p">&gt;</span> <span class="nf">GetFarmRangeTiles</span><span class="p">(</span><span class="n">Farm</span> <span class="n">farm</span><span class="p">){</span>
+    <span class="n">List</span><span class="p">&lt;</span><span class="n">Vector3Int</span><span class="p">&gt;</span> <span class="n">rangeTiles</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Vector3Int</span><span class="p">&gt;();</span>
+    <span class="kt">int</span> <span class="n">range</span> <span class="p">=</span> <span class="n">farm</span><span class="p">.</span><span class="n">range</span><span class="p">;</span>
+
+    <span class="n">Vector3Int</span> <span class="n">centerCubic</span> <span class="p">=</span> <span class="n">HexUtils</span><span class="p">.</span><span class="nf">OffsetToCubic</span><span class="p">(</span><span class="n">farm</span><span class="p">.</span><span class="n">offsetCoord</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">radius</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">radius</span> <span class="p">&lt;=</span> <span class="n">range</span><span class="p">;</span> <span class="n">radius</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="n">Vector3Int</span><span class="p">[]</span> <span class="n">directions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3Int</span><span class="p">[]</span>
+        <span class="p">{</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">),</span>   <span class="c1">// Top-right</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>   <span class="c1">// Top-left</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>   <span class="c1">// Left</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>   <span class="c1">// Bottom-left</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>   <span class="c1">// Bottom-right</span>
+            <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="p">-</span><span class="m">1</span><span class="p">)</span>    <span class="c1">// Right</span>
+        <span class="p">};</span>
+        <span class="n">Vector3Int</span> <span class="n">currentCubic</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Vector3Int</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="p">-</span><span class="n">radius</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">6</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="n">radius</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="n">Vector3Int</span> <span class="n">offsetCoord</span> <span class="p">=</span> <span class="n">HexUtils</span><span class="p">.</span><span class="nf">CubicToOffset</span><span class="p">(</span><span class="n">centerCubic</span> <span class="p">+</span> <span class="n">currentCubic</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">farmRangeMap</span><span class="p">.</span><span class="nf">HasTile</span><span class="p">(</span><span class="n">offsetCoord</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">rangeTiles</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">offsetCoord</span><span class="p">);</span>
+                <span class="p">}</span>
+
+                <span class="n">currentCubic</span> <span class="p">+=</span> <span class="n">directions</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<h3 id="more-to-come">More to come!</h3>
+
+<h3 id="total-time-spent-5hr--30min-for-devlogs">Total Time Spent: 5hr + 30min for Devlogs</h3>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Connor Spears. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showSprint(sprintNumber){
+            const sprints = document.querySelectorAll('.sprint-content');
+            sprints.forEach(sprint => {
+                sprint.style.display = 'none';
+            });
+            document.getElementById('sprint' + sprintNumber).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

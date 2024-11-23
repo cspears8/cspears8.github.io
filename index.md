@@ -42,6 +42,7 @@ title: "Connor Spears: UI Programmer"
 	<p><em>Date 11/03/24-11/17/24</em></p>
 	<p>This sprint had me implementing more systems as well as working on feedback from playtesting</p>
 	<a href="{{ '/blog/2024/11/17/sprint3Blog.html' | relative_url }}" class="read-more">Read More</a>
+</div>
 <div id="sprint4" class="sprint-content" style="display: none;">
 	<h2>Sprint 4 Blog</h2>
 	<p><em>Date 11/17/24-12/01/24</em></p>
