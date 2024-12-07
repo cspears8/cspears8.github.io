@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sprint 4 Blog"
-data: 2024-11-23
+data: 2024-12-01
 categories: blog
 ---
 ## Introduction
@@ -48,6 +48,24 @@ Farms also spawn trees at a set rate (45 seconds), this was somewhat easy to dev
         }
     }
 ```
-### More to come!
+### Weekly Meeting #8 (2hr)
+This was our last meeting of production before documentation and pitch deck creation took center stage. We discussed what was left, which honestly wasn't much. During testing we found a couple of bugs related to the farm and its range implementation, I was tasked with fixing those up. I also was tasked with art implementation as we had gotten the new dungeon art asset in, with that all we needed was the wizard tower and a couple brush-ups on the environment art. Connor, our director, told us due dates for the final deliverable and what we needed with them. We have a rough draft of the documentation due on 12/7, our finished prototype on 12/9, and the pitch deck on 12/15. It was time to finish this game!
 
-### Total Time Spent: 5hr + 30min for Devlogs
+## Week Two
+
+### Farm Bug Fixes (1hr)
+There were a couple small bugs with the farm, namely the range rings weren't being deleted all the way and the multipliers for multiple farms on a single building was wrong. The first fix was easy, I simply forgot to add the calculations for finding the radii of other farms in range, this resulted in tiles getting set to null even if they are in range of another farm. The code was also cleaned up by nesting the farm logic and the wizard tower logic into an if-else statement so unnecessary code wasn't being run. The second problem was also easy, I just changed the production corroutine in the ResourceManager (which every producing building is subscribed to) to check for that building's production amount ever cycle using a get method. This meant that the RangeManager could set the production of that building and the ResourceManager would update automatically.
+
+### Art Implementation (30min)
+This was a really self-explanatory task, Nadav finished up the dungeon art, so I put it in the game. Since structures can take up multiple tiles, but that can be hard to design for as an artist, we have a set size for all buildings and then the first tile of the structure is the sprite while the rest are blank tiles which just act as representations of it actually being made up of bigger tiles. Here is how that works, below that is the dungeon in game:
+
+![Dungeon Structure]({{ site.baseurl }}/files/dungeonStructure.png){: .post-image}
+
+![Dungeon In-Game]({{ site.baseurl }}/files/dungeonInGame.png){: .post-image}
+
+### Main Menu Design (3hr)
+I figured we should probably have some sort of basic main menu for demonstration purposes. Mainly just to outline what we will need in the future for the next semester. This is mostly just editor work where I made some canvas objects and buttons, designed some assets in Figma like arrows. The navigation between menus was quite simple, but making it pretty is a different task. I used a lot of vertical and horizontal layout groups to make sure that every asset was evenly spaced out and well organized for if someone else needed to polish it later. We don't have any assets so this is purely functional. I had to create a lot of card type objects which used some of my web design knowledge. Here's a screenshot of the menu describing the buildings:
+
+![Building Info Menu]({{ site.baseurl }}/files/buildingInfoMenu.png){: .post-image}
+
+### Total Time Spent: 12hr + 1hr for Devlogs

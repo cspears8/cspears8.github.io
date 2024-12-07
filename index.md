@@ -47,5 +47,5 @@ title: "Connor Spears: UI Programmer"
 	<h2>Sprint 4 Blog</h2>
 	<p><em>Date 11/17/24-12/01/24</em></p>
 	<p>Our last sprint revolved around a lot of finishing up of features and polishing</p>
-	<a href="{{ '/blog/2024/11/23/sprint4Blog.html' | relative_url }}" class="read-more">Read More</a>
+	<a href="{{ '/blog/2024/12/01/sprint4Blog.html' | relative_url }}" class="read-more">Read More</a>
 </div>
