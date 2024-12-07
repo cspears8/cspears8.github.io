@@ -14,14 +14,15 @@ header ul li {
 	margin-right: 20px;
 }
 
-header, ul, li, a{
+header, ul, li{
 	text-decoration: none;
 	color: black;
 	font-size: 16px;
 }
 
-ul li a:hover{
-	color: gray;
+header ul li a{
+	color: black;
+	text-decoration: none;
 }
 
 footer{
@@ -30,7 +31,7 @@ footer{
 	width: 100%;
 }
 
-p, h1, h2, h3, a, li, button{
+p, h1, h2, h3, h4, li, button{
 	margin-left: 20px;
 	color: black;
 }
@@ -91,6 +92,6 @@ button{
 	background-color: #10427d;
 }
 
-a:visited{
-	color: black;
+a{
+	margin-left: 20px;
 }
