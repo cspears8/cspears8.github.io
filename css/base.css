@@ -31,7 +31,7 @@ footer{
 	width: 100%;
 }
 
-p, h1, h2, h3, h4, li, button{
+p, h1, h2, h3, h4, li, button, code{
 	margin-left: 20px;
 	color: black;
 }
