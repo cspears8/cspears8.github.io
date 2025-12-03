@@ -9,12 +9,12 @@ intro: |
   Extra text to see a new line.
 
 sections:
-  - image: ../assets/projects/CorDraconis/BuildMenu.png
+  - image: ../assets/projects/CorDraconis/BuildMenu.PNG
     text: |
       ## Build Menu
       Here is some text about the build menu.
     reverse: false
-  - image: ../assets/projects/CorDraconis/Dungeon.png
+  - image: ../assets/projects/CorDraconis/Dungeon.PNG
     text: |
       ## Dungeon Generation
       Here is some text about dungeon generation.
