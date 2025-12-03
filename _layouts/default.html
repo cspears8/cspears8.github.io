@@ -1,44 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-	<link rel="stylesheet" href="{{ '../css/base.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '../css/about.css' | relative_url }}">
+    <link rel="stylesheet" href="/assets/css/base.css">
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header>
-        <h1>{{ page.title }}</h1>
-        <h2>WolverineSoft Fall 2024</h2>
-        <nav>
-            <ul>
-				<li><a href="{{ '/' | relative_url }}">Home</a></li>
-				<li><a href="{{ '/about.html' | relative_url }}">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        {{ content }}
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Connor Spears. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function showSprint(sprintNumber){
-            const sprints = document.querySelectorAll('.sprint-content');
-            sprints.forEach(sprint => {
-                sprint.style.display = 'none';
-            });
-            document.getElementById('sprint' + sprintNumber).style.display = 'block';
-        }
-    </script>
+{% include header.html %}
+{{ content }}
+<footer>
+    <p>&copy; 2026 Connor Spears. All Rights Reserved.</p>
+</footer>
 </body>
 </html>

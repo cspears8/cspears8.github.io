@@ -1,4 +1,9 @@
-title: "Connor Spears: UI Programmer Blog"
-description: "My blog for WolverineSoft for the Fall 2024 semester"
+title: "Connor Spears Portfolio"
+description: "My portfolio for game dev"
 url: "https://www.connor-spears.com"
 highlighter: rouge
+collections:
+  projects:
+    output: true
+  devlogs:
+    output: true

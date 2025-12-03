@@ -1,0 +1,237 @@
+<h2 id="introduction">Introduction</h2>
+
+<p>This first couple of weeks are what I would like to call “Sprint 0”. During this time I applied to WolverineSoft, had my first meeting, and created this website! Below you will find a breakdown of everything that I did and the time it took for me to do those respective tasks.</p>
+
+<h2 id="week-one">Week One</h2>
+
+<h3 id="application-1hr">Application (1hr)</h3>
+<p>I applied to WolverineSoft on September 11th, the application form was quite simpler, a lot easier than what I had filled out in the past two semesters. Just asked for contact information, year and class load, as well as seeing which department we would be most interested in. I heard back on September 15th that a department challenge would be released the following morning at 8AM and would be due on the 18th at 6PM. That is where the chaos began…</p>
+
+<h3 id="technical-interview-6hr">Technical Interview (6hr)</h3>
+<p>I was ready that Monday morning to start the challenge, despite having class from 9-5 that day. When I opened the requirements document I was quite overwhelmed as the studio wanted me to make a clone of the popular web game <a href="agar.io" title="View game">Agar.io</a>. I was worried because I only had so much free time in order to complete the project with my other classes and my part-time job taking up a lot of time. I ended up taking a day off of work to complete it by Tuesday and submit by Wednesday. To my surprise however, the due date was pushed back on Tuesday night until that Friday, after I had finished the game… No worries I just submitted early which I suppose looked good on my application.</p>
+
+<p>On to the actual development, I had to have two different types of enemies, stagnant and wandering. Stagnant were size 1 by default and could not move, while wandering enemies were a random size between 1-100 and randomly “wandered” around the play field. I had enemies change direction every 7 seconds, and combined the logic for the stagnant and wandering enemies by just removing the rigid bodies from the stagnant ones. Here is the script:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEditor.Experimental.GraphView</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Enemy</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="kt">float</span> <span class="n">moveInterval</span> <span class="p">=</span> <span class="m">7f</span><span class="p">;</span> <span class="c1">//How often to rotate</span>
+    <span class="p">[</span><span class="n">SerializeField</span><span class="p">]</span> <span class="kt">float</span> <span class="n">speed</span> <span class="p">=</span> <span class="m">2f</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">enemySize</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="n">Vector2</span> <span class="n">moveDir</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Rigidbody2D</span> <span class="n">rb</span><span class="p">;</span>
+
+    <span class="k">void</span> <span class="nf">Awake</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
+        <span class="c1">//If it has a rigid body it is a wandering enemy, therefore it needs a random size, otherwise it is the same</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rb</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">enemySize</span> <span class="p">=</span> <span class="n">Mathf</span><span class="p">.</span><span class="nf">RoundToInt</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="k">value</span> <span class="p">*</span> <span class="m">100</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">enemySize</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="n">enemySize</span><span class="p">++;</span>
+            <span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">enemySize</span> <span class="p">*</span> <span class="p">.</span><span class="m">1f</span><span class="p">,</span> <span class="n">enemySize</span> <span class="p">*</span> <span class="p">.</span><span class="m">1f</span><span class="p">);</span>
+            <span class="nf">StartCoroutine</span><span class="p">(</span><span class="nf">ChangeDirection</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="n">enemySize</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">FixedUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//If the enemy is a wandering enemy then move it every frame, otherwise do nothing</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rb</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="n">rb</span><span class="p">.</span><span class="nf">MovePosition</span><span class="p">(</span><span class="n">rb</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">moveDir</span> <span class="p">*</span> <span class="n">speed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Coroutine for changing the wandering enemies direction every moveInterval</span>
+    <span class="n">IEnumerator</span> <span class="nf">ChangeDirection</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> 
+        <span class="p">{</span> 
+            <span class="n">moveDir</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="nf">Range</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">Random</span><span class="p">.</span><span class="nf">Range</span><span class="p">(-</span><span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+            <span class="k">yield</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">WaitForSeconds</span><span class="p">(</span><span class="n">moveInterval</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>I also needed a way for the enemies to spawn at the beginning of the game as well as when the player eats an enemy, this was done using a simple if-statement in the Update function. If I could refactor this code I would probably create an event which would be published by the player script when an enemy is eaten, rather than checking every frame. I do like how the script uses prefabs to spawn enemies though. Here is that script:</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">EnemySpawner</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="n">stagPfab</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="n">wandPfab</span><span class="p">;</span>
+    
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">maxStag</span> <span class="p">=</span> <span class="m">25</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">maxWand</span> <span class="p">=</span> <span class="m">15</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">currentStag</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">currentWand</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">mapSize</span> <span class="p">=</span> <span class="m">30</span><span class="p">;</span> <span class="c1">//Radius of map size to spawn random enemies</span>
+
+    <span class="c1">//Initialize all the enemies</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">maxStag</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> 
+        <span class="p">{</span>
+            <span class="nf">SpawnEnemy</span><span class="p">(</span><span class="n">stagPfab</span><span class="p">);</span>
+            <span class="n">currentStag</span><span class="p">++;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">maxWand</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> 
+        <span class="p">{</span>
+            <span class="nf">SpawnEnemy</span><span class="p">(</span><span class="n">wandPfab</span><span class="p">);</span>
+            <span class="n">currentWand</span><span class="p">++;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Check for if an enemy has been eaten, if so, spawn another one</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentStag</span> <span class="p">&lt;</span> <span class="n">maxStag</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="nf">SpawnEnemy</span><span class="p">(</span><span class="n">stagPfab</span><span class="p">);</span>
+            <span class="n">currentStag</span><span class="p">++;</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">currentWand</span> <span class="p">&lt;</span> <span class="n">maxWand</span><span class="p">)</span> 
+        <span class="p">{</span>
+            <span class="nf">SpawnEnemy</span><span class="p">(</span><span class="n">wandPfab</span><span class="p">);</span>
+            <span class="n">currentWand</span><span class="p">++;</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Spawn an enemy in a random spot within the map</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">SpawnEnemy</span><span class="p">(</span><span class="n">GameObject</span> <span class="n">ePfab</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="kt">float</span> <span class="n">randX</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="nf">Range</span><span class="p">(-</span><span class="n">mapSize</span><span class="p">,</span> <span class="n">mapSize</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">randY</span> <span class="p">=</span> <span class="n">Random</span><span class="p">.</span><span class="nf">Range</span><span class="p">(-</span><span class="n">mapSize</span><span class="p">,</span> <span class="n">mapSize</span><span class="p">);</span>
+
+        <span class="n">Vector2</span> <span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Vector2</span><span class="p">(</span><span class="n">randX</span><span class="p">,</span> <span class="n">randY</span><span class="p">);</span>
+        <span class="nf">Instantiate</span><span class="p">(</span><span class="n">ePfab</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The last script was the player script which I had to have wasd movement, a way to check collisions with enemies, a way to eat enemies, a win condition (reaching size 100), and a way to game over. On top of all of that I had to create a animation to play when the player eats an enemy, this was done by using the Unity animation system and just keyframes which go from one color to another. There also had to be a small GUI which showed the player size. Here is that script:</p>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">TMPro</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine.InputSystem</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">UnityEngine.SceneManagement</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Player</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">Rigidbody2D</span> <span class="n">rb</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Vector2</span> <span class="n">moveDir</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">Animator</span> <span class="n">animator</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">bool</span> <span class="n">isPlaying</span><span class="p">;</span> <span class="c1">//Is the animation playing?</span>
+
+    <span class="k">public</span> <span class="n">TextMeshProUGUI</span> <span class="n">sizeText</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">float</span> <span class="n">speed</span> <span class="p">=</span> <span class="m">3f</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">EnemySpawner</span> <span class="n">spawner</span><span class="p">;</span>
+
+    <span class="c1">//Assign variables</span>
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">animator</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;();</span>
+        <span class="n">rb</span> <span class="p">=</span> <span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody2D</span><span class="p">&gt;();</span>
+        <span class="n">sizeText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">"Size: "</span> <span class="p">+</span> <span class="n">size</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">FixedUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">//Move the player</span>
+        <span class="n">rb</span><span class="p">.</span><span class="nf">MovePosition</span><span class="p">(</span><span class="n">rb</span><span class="p">.</span><span class="n">position</span> <span class="p">+</span> <span class="n">moveDir</span> <span class="p">*</span> <span class="n">speed</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">);</span>
+
+        <span class="c1">//Check the state of the animation, if it is finished set the bool to false</span>
+        <span class="n">AnimatorStateInfo</span> <span class="n">stateInfo</span> <span class="p">=</span> <span class="n">animator</span><span class="p">.</span><span class="nf">GetCurrentAnimatorStateInfo</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">stateInfo</span><span class="p">.</span><span class="nf">IsName</span><span class="p">(</span><span class="s">"Eating"</span><span class="p">)</span> <span class="p">&amp;</span> <span class="n">stateInfo</span><span class="p">.</span><span class="n">normalizedTime</span> <span class="p">&gt;=</span> <span class="m">1.0f</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">animator</span><span class="p">.</span><span class="nf">SetBool</span><span class="p">(</span><span class="s">"isEating"</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+            <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Messages sent by the input manager</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">OnMove</span><span class="p">(</span><span class="n">InputValue</span> <span class="k">value</span><span class="p">)</span> 
+    <span class="p">{</span> 
+        <span class="n">moveDir</span> <span class="p">=</span> <span class="k">value</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">Vector2</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">OnMoveCanceled</span><span class="p">(</span><span class="n">InputValue</span> <span class="k">value</span><span class="p">)</span> 
+    <span class="p">{</span>
+        <span class="n">moveDir</span> <span class="p">=</span> <span class="n">Vector2</span><span class="p">.</span><span class="n">zero</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">OnCollisionEnter2D</span><span class="p">(</span><span class="n">Collision2D</span> <span class="n">collision</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Enemy</span> <span class="n">enemy</span> <span class="p">=</span> <span class="n">collision</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Enemy</span><span class="p">&gt;();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">enemy</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">//Collision is not an enemy, continue!</span>
+        
+        <span class="c1">//If enemy is bigger you die!</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">enemy</span><span class="p">.</span><span class="n">enemySize</span> <span class="p">&gt;=</span> <span class="n">size</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">SceneManager</span><span class="p">.</span><span class="nf">LoadScene</span><span class="p">(</span><span class="n">SceneManager</span><span class="p">.</span><span class="nf">GetActiveScene</span><span class="p">().</span><span class="n">buildIndex</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> 
+        <span class="p">{</span>
+            <span class="c1">//Add the size to you and increase your scale relatively</span>
+            <span class="n">size</span> <span class="p">+=</span> <span class="n">enemy</span><span class="p">.</span><span class="n">enemySize</span><span class="p">;</span>
+            <span class="n">sizeText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="s">"Size: "</span> <span class="p">+</span> <span class="n">size</span><span class="p">;</span>
+            <span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Vector3</span><span class="p">(</span><span class="n">size</span><span class="p">*.</span><span class="m">1f</span><span class="p">,</span> <span class="n">size</span><span class="p">*.</span><span class="m">1f</span><span class="p">,</span> <span class="n">size</span><span class="p">*.</span><span class="m">1f</span><span class="p">);</span>
+
+            <span class="c1">//Decrement for spawning and destroy the object</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">enemy</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="nf">CompareTag</span><span class="p">(</span><span class="s">"WandEnemy"</span><span class="p">))</span> <span class="n">spawner</span><span class="p">.</span><span class="n">currentWand</span><span class="p">--;</span>
+            <span class="k">else</span> <span class="n">spawner</span><span class="p">.</span><span class="n">currentStag</span><span class="p">--;</span>
+            <span class="nf">Destroy</span><span class="p">(</span><span class="n">enemy</span><span class="p">.</span><span class="n">gameObject</span><span class="p">);</span>
+
+            <span class="c1">//If the animation is not playing already then play it</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">isPlaying</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">animator</span><span class="p">.</span><span class="nf">SetBool</span><span class="p">(</span><span class="s">"isEating"</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+                <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">//If you are at 100 size or more then you win!</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="p">&gt;=</span> <span class="m">100</span><span class="p">)</span> 
+            <span class="p">{</span>
+                <span class="n">SceneManager</span><span class="p">.</span><span class="nf">LoadScene</span><span class="p">(</span><span class="n">SceneManager</span><span class="p">.</span><span class="nf">GetActiveScene</span><span class="p">().</span><span class="n">buildIndex</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="weekly-meeting-1-25h">Weekly Meeting #1 (2.5h)</h3>
+<p>After submitting my technical interview on Wednesday the 18th, I got the acceptance letter on Saturday the 21st and was told we would have our first meeting the next day at 11-1pm, our usual time. I arrived and was surprised to see how much more laid back the atmosphere was compared to how it was when the studio was much larger. There were maybe 40 people in the studio instead of 80+ like before, made me feel a lot better as I can be closer with everyone. We started our first meeting by playing some JackBox games as an icebreaker and talking to teammates around us.</p>
+
+<p>Afterwords, we had a rundown on the studio structure, policy, communication and development tools. The biggest change is switching from Atlassian tools (Bitbucket, Jira, Confluence) to using Gitlab and Notion. I have been using Notion a lot this semester already in my 481W class as I serve as a team lead and therefore end up doing most of the production work there. Needless to say I am not huge on it, but it can be impressive. Gitlab I still as of writing this do not have access to due to the server requirements since I am the only(?) non-UofM student there.</p>
+
+<p>The rest of the meeting was spent filling out various forms and chatting. The most important form was a preference form, I could either work on the main project with around 20 other members called Project Sandcastle, a real-time strategy game, or work on a smaller R&amp;D team which would basically prep the prototype for next semester’s project. I ended up on R&amp;D with 2 others: Gavin McGinness (programming) and Nadav Havilio (art). We were told by our Studio Directior, Connor Chen, to come up with an idea for a game and what genre to work in, the only restriction was that it had to be 2D.</p>
+
+<h2 id="week-two">Week Two</h2>
+
+<h3 id="rd-meeting-93024-1h">R&amp;D Meeting (9/30/24) (1h)</h3>
+<p>Quickly, our team planned a Discord call to establish a genre. We had tossed around a lot of ideas from platformers, dungeon-crawlers, and even a fighting game based around chess pieces. We eventually settled on the genre that Gavin and I came up with: management simulator, akin to games like SimCity and Civilization. 
+We tried to find a theme for this particular genre that would be fun, I initially threw around post-apocalyptic, space, and even small scale nuclear power plant simulation. Nadav mentioned that he liked fantasy and sci-fi art, this helped us find the fantasy theme as we couldn’t find any other games in the same lane as that.</p>
+
+<h3 id="research-2h">Research (2h)</h3>
+<p>After our meeting I spent some time looking at the games in these genres and found a couple underlying principles: growth, creativity, and unexpected events. As well as doing research into the design I also researched the programming side. There is a huge and famous <a href="https://catlikecoding.com/unity/tutorials/hex-map/" class="post-link">tutorial</a> for hex maps in Unity which I looked into and messed with a bit to get familiar with the structure. Below are some images I used as reference:</p>
+
+<p><img src="/files/simCity.jpg" alt="SimCity" class="post-image" />
+<img src="/files/Lower_City.jpg" alt="Baldur's Gate 3" class="post-image" /></p>
+
+<h3 id="rd-meeting-10524-1h">R&amp;D Meeting 10/5/24 (1h)</h3>
+<p>This meeting was much more focused on planning out the main requirements for the game as well as the lore of the game. We settled on the idea of the player finding a dragon heart which powers their city, and having dragon fossils be acquired to serve as the main “upgrades” for the player. Main requirements included a building system with UI, 6 different structures for different functions, a currency system, character concepts, and progression systems.</p>
+
+<h3 id="weekly-meeting-2-2h">Weekly Meeting #2 (2h)</h3>
+<p>This meeting was mainly focused on getting a timeline for the project finalized. We created multiple deadlines on Notion and assigned generalized tasks to each other. I got a better understanding of the final deliverables for the project, a working demo, detailed documentation, and a pitch deck. The pre-alpha demo should be ready for play testing by the end of October with a slideshow to present current design and upcoming plans. That will continue to be worked on over the coming weeks.
+My current task was working on preliminary UI for the project, the buy screen, the text system, the controls, etc.</p>

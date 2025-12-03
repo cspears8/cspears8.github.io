@@ -1,6 +1,3 @@
 source "https://rubygems.org"
-gem "jekyll"
-gem 'logger'
-gem 'csv'
-gem 'base64'
-gem 'ostruct'
+
+gem "github-pages", group: :jekyll_plugins

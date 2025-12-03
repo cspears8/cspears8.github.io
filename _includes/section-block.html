@@ -1,0 +1,8 @@
+<div class="section-block {% if include.reverse %}reverse{% endif %}">
+    <div class="section-image">
+        <img src="{{ include.image | relative_url }}" alt="">
+    </div>
+    <div class="section-text">
+        {{ include.content | markdownify }}
+    </div>
+</div>

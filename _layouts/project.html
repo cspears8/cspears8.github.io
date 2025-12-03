@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<main class="project-container">
+    <header class="project-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="project-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+    </header>
+
+    {% if page.cover %}
+    <div class="project-cover">
+        <img src="{{ page.cover | relative_url }}" alt="">
+    </div>
+    {% endif %}
+
+    <section class="project-intro">
+        {{ page.intro | markdownify }}
+    </section>
+
+    <section class="project-sections">
+        {% for section in page.sections %}
+        {% include section-block.html
+        image=section.image
+        content=section.text
+        reverse=section.reverse
+        %}
+        {% endfor %}
+    </section>
+
+    <section class="project-conclusion">
+        {{ page.conclusion | markdownify }}
+    </section>
+</main>
