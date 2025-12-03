@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/about.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/project.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/Lower_City.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/PrelimUI.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/artImplementation1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/buildingInfoMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/buildingUI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/contractorDesignTable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/controlsDoc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/costScalingFormula.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/destroyWarningUI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/dungeonInGame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/dungeonStructure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/enemiesDoc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/github-mark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/gmail-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/headshot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/linkedin-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/simCity.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/images/updatedUiInputs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/js/gameboy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/misc/mandelbrot.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/misc/spears-Resume.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/misc/unbricked.gb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/projects/CorDraconis/BuildMenu.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/projects/CorDraconis/Dungeon.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/projects/CorDraconis/buildings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/projects/CorDraconis/cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/CorDraconis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-09-26-sprint0Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-10-13-sprint1Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-10-30-sprint2Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-11-17-sprint3Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-12-01-sprint4Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/2024-12-07-sprint5Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/devlog/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +118,7 @@
       <workItem from="1762532148031" duration="4306000" />
       <workItem from="1764735733316" duration="7682000" />
       <workItem from="1764743500163" duration="1615000" />
-      <workItem from="1764771056108" duration="12769000" />
+      <workItem from="1764771056108" duration="13102000" />
     </task>
     <servers />
   </component>
