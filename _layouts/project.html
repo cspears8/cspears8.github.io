@@ -23,7 +23,7 @@ layout: default
     <section class="project-sections">
         {% for section in page.sections %}
         {% include section-block.html
-        image=section.image | relative_url
+        image=section.image
         content=section.text
         reverse=section.reverse
         %}
