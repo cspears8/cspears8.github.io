@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/projects/DialogueSystem/Dialogue.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/project.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/project.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +67,11 @@
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\_site\projects\CorDraconis" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\DialogueSystem" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\images" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\CorDraconis" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\projects" />
-      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\projects\CorDraconis" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +122,7 @@
       <workItem from="1762532148031" duration="4306000" />
       <workItem from="1764735733316" duration="7682000" />
       <workItem from="1764743500163" duration="1615000" />
-      <workItem from="1764771056108" duration="14212000" />
+      <workItem from="1764771056108" duration="15681000" />
     </task>
     <servers />
   </component>

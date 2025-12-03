@@ -40,20 +40,12 @@ title: "Connor Spears - Systems Programmer and Tech Designer"
     </div>
     <div class="project-card">
         <a href="/projects/DialogueSystem/DialogueSystem.html" class="project-link-wrapper">
-            <h3>Project Promotion – Producer and Systems Programmer</h3>
+            <h3>GraphView Dialogue System - Tools Programming</h3>
             <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/qgJQsNYJZbw" 
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                <img src="/assets/projects/DialogueSystem/Dialogue.PNG" alt="Dialogue System screenshot">
             </div>
             <p>
-                Rapid prototyped an isometric tactics game set in an office setting. After a successful pitch,
-                I went on to lead that team as producer the next semester. My tasks included organizing meetings,
-                prioritizing tasks, ensuring team cohesion, as well as general programming and design work.
+                Implemented a robust node based dialogue system using Unity's GraphView API. Followed a lengthy tutorial series to get the initial set-up, then iterated, adding features such as a front-end, more data elements, and event functionality.
             </p>
             <span class="project-link">View Project →</span>
         </a>

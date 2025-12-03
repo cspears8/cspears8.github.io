@@ -366,6 +366,20 @@ footer {
     margin-bottom: 12px;
 }
 
+.video-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* optional if your videos were rounded */
+}
+
+.video-wrapper:has(img) {
+    padding-top: 0;
+    height: auto;
+    position: relative;
+}
+
+
 .video-wrapper iframe {
     position: absolute;
     top: 0;
