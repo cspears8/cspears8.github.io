@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a class="nav-logo" href="/">Connor Spears</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-404">
+    <h1>404 – Page Not Found</h1>
+    <p>Sorry, the page you were looking for doesn’t exist.</p>
+    <a href="/" class="button-link">Return Home</a>
+    <section class="gameboy-section">
+        <h2>Play a game while you wait...</h2>
+        <div id="gb-container-wrapper">
+            <canvas id="gb-container" width="320" height="288"></canvas>
+        </div>
+        <p>You've discovered one of my hobby projects! This is a Gameboy game made purely in SM83 assembly. I picked this up due to a combined interest in retro gaming and low level programming. I wanted to get a better understanding of the limits that game developers had back in the 90s, and after working on this for a bit it's a miracle that they made anything at all! Happy tinkering!</p>
+    </section>
+</section>
+
+<script src="/assets/js/gameboy.js"></script>
+<input type="file" id="dummy-file-input" style="display:none;" />
+<script>
+    const container = document.getElementById('gb-container');
+
+    // Create Gameboy instance, give it a dummy reader
+    const gameboy = new GameboyJS.Gameboy(container, {
+        romReaders: [ new GameboyJS.RomFileReader(document.getElementById('dummy-file-input')) ],
+        zoom: 2
+    });
+
+    // Fetch your ROM and start it manually
+    fetch("/assets/misc/unbricked.gb")
+        .then(res => res.arrayBuffer())
+        .then(buffer => {
+            const romData = new Uint8Array(buffer);
+            gameboy.startRom({ data: romData });
+        });
+</script>
+
+
+<section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+        <a class="contact-card" href="mailto:connorxspears@gmail.com">
+            <img class="contact-icon" src="/assets/images/gmail-logo.png" alt="Email icon">
+            <h3>Email</h3>
+            <p>connorxspears@gmail.com</p>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/connor-spears-5bb23128b/" target="_blank">
+            <img class="contact-icon" src="/assets/images/linkedin-logo.png" alt="LinkedIn icon">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/connor-spears-5bb23128b</p>
+        </a>
+        <a class="contact-card" href="https://github.com/cspears8" target="_blank">
+            <img class="contact-icon" src="/assets/images/github-mark.png" alt="GitHub icon">
+            <h3>GitHub</h3>
+            <p>github.com/cspears8</p>
+        </a>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2026 Connor Spears. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Page Not Found"
+permalink: /404.html
+---
+
+<section class="hero-404">
+    <h1>404 – Page Not Found</h1>
+    <p>Sorry, the page you were looking for doesn’t exist.</p>
+    <a href="{{ '/' | relative_url }}" class="button-link">Return Home</a>
+    <section class="gameboy-section">
+        <h2>Play a game while you wait...</h2>
+        <div id="gb-container-wrapper">
+            <canvas id="gb-container" width="320" height="288"></canvas>
+        </div>
+        <p>You've discovered one of my hobby projects! This is a Gameboy game made purely in SM83 assembly. I picked this up due to a combined interest in retro gaming and low level programming. I wanted to get a better understanding of the limits that game developers had back in the 90s, and after working on this for a bit it's a miracle that they made anything at all! Happy tinkering!</p>
+    </section>
+</section>
+
+<script src="{{ '/assets/js/gameboy.js' | relative_url }}"></script>
+<input type="file" id="dummy-file-input" style="display:none;" />
+<script>
+    const container = document.getElementById('gb-container');
+
+    // Create Gameboy instance, give it a dummy reader
+    const gameboy = new GameboyJS.Gameboy(container, {
+        romReaders: [ new GameboyJS.RomFileReader(document.getElementById('dummy-file-input')) ],
+        zoom: 2
+    });
+
+    // Fetch your ROM and start it manually
+    fetch("{{ '/assets/misc/unbricked.gb' | relative_url }}")
+        .then(res => res.arrayBuffer())
+        .then(buffer => {
+            const romData = new Uint8Array(buffer);
+            gameboy.startRom({ data: romData });
+        });
+</script>
+

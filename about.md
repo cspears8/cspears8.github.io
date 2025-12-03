@@ -7,7 +7,7 @@ permalink: /about/
 <main>
 	<!-- About Me -->
 	<section class="about-me">
-		<div class="about-content">
+		<div class="about-text">
 			<h2>About Me</h2>
 			<p>I'm a systems programmer and technical designer, currently based in Ypsilanti, MI. I obtained my BS in Computer Science from Eastern Michigan University in December 2024, where I have fell in love with the art of game development. Currently, I am obtaining my MA from Michigan State University where I study game development. I also teach special needs students about game development at my part-time job.</p>
 			<p>I've worn a lot of hats over my 5+ years of game dev, including design, programming, and project management roles. I develop at this point purely for the love of the process of making a game, from the highs of seeing peoples' smiles while playing my game, to the lows of the late night memory leak bug fixes.</p>
@@ -17,17 +17,6 @@ permalink: /about/
             <img src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Headshot Picture">
         </div>
 	</section>
-
-  <!-- Links Section -->
-  <section class="about-links">
-    <h2>Relevant Links</h2>
-    <ul class="button-list">
-      <li><a href="https://www.linkedin.com/in/connor-spears-5bb23128b/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/cspears8" target="_blank">GitHub</a></li>
-      <li><a href="https://connorxspears.wixsite.com/connorspears" target="_blank">Wix Portfolio</a></li>
-      <li><a href="mailto:connorxspears@gmail.com">Email</a></li>
-    </ul>
-  </section>
 
   <!-- Resume Section -->
   <section class="about-resume">
