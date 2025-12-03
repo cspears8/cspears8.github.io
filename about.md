@@ -2,6 +2,7 @@
 layout: default
 title: "About Me"
 ---
+
 <main>
 	<!-- About Me -->
 	<section class="about-me">
@@ -12,10 +13,10 @@ title: "About Me"
 			<p>When I need a break from making games I enjoy playing single-player games, especially RPGs. My favorite games are Chrono Trigger, Gris, and BioShock. Other than games I am a huge music fan, some of my favorite genres are Psychedelic Rock, Hardcore Punk, and Jazz Rap.</p>
 		</div>
         <div class="about-image">		
-            <img src="/assets/images/headshot.jpg" alt="Headshot Picture">
+            <img src="{{ '/assets/images/headshot.jpg' | relative_url }}" alt="Headshot Picture">
         </div>
 	</section>
-	
+
   <!-- Links Section -->
   <section class="about-links">
     <h2>Relevant Links</h2>
@@ -30,7 +31,7 @@ title: "About Me"
   <!-- Resume Section -->
   <section class="about-resume">
     <h2>Resume</h2>
-    <p><a href="/assets/misc/spears-Resume.pdf" target="_blank">Download Resume</a></p>
-    <iframe src="/assets/misc/spears-Resume.pdf" width="100%" height="600px"></iframe>
+    <p><a href="{{ '/assets/misc/spears-Resume.pdf' | relative_url }}" target="_blank">Download Resume</a></p>
+    <iframe src="{{ '/assets/misc/spears-Resume.pdf' | relative_url }}" width="100%" height="600px"></iframe>
   </section>
 </main>
