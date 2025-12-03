@@ -5,77 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_includes/section-block.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/project.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/project.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/misc/spears-Resume.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/projects/CorDraconis/BuildMenu.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/projects/CorDraconis/Dungeon.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/projects/CorDraconis/cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/CorDraconis/CorDraconis.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-09-26-sprint0Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-09-26-sprint0Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-10-13-sprint1Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-10-13-sprint1Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-10-30-sprint2Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-10-30-sprint2Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-11-17-sprint3Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-11-17-sprint3Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-12-01-sprint4Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-12-01-sprint4Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-12-07-sprint5Blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/devlog/2024-12-07-sprint5Blog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/CNAME" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/09/26/sprint0Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/10/13/sprint1Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/10/30/sprint2Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/11/17/sprint3Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/12/01/sprint4Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2024/12/07/sprint5Blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/Lower_City.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/Lower_City.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/PrelimUI.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/PrelimUI.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/artImplementation1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/artImplementation1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/buildingInfoMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/buildingInfoMenu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/buildingUI.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/buildingUI.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/contractorDesignTable.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/contractorDesignTable.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/controlsDoc.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/controlsDoc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/costScalingFormula.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/costScalingFormula.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/destroyWarningUI.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/destroyWarningUI.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/dungeonInGame.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dungeonInGame.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/dungeonStructure.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/dungeonStructure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/enemiesDoc.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/enemiesDoc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/headshot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/headshot.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/simCity.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/simCity.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/spears-Resume.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/files/updatedUiInputs.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/updatedUiInputs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/about.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/about.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/Lower_City.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/PrelimUI.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/artImplementation1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/projects/CorDraconis/buildings.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/buildingInfoMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/buildingUI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/contractorDesignTable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/controlsDoc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/costScalingFormula.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/destroyWarningUI.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/dungeonInGame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/dungeonStructure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/enemiesDoc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/headshot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/simCity.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/spears-Resume.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/updatedUiInputs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,27 +33,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/conno/OneDrive/Documents/GitHub/cspears8.github.io/assets/misc",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.test.executor": "Run",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "two.files.diff.last.used.file": "C:/Users/conno/GitHub/cspears8.github.io/_posts/2024-11-17-sprint3Blog.md",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/conno/OneDrive/Documents/GitHub/cspears8.github.io/assets/misc&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/conno/GitHub/cspears8.github.io/_posts/2024-11-17-sprint3Blog.md&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
@@ -185,7 +116,8 @@
       <workItem from="1733595387232" duration="5527000" />
       <workItem from="1733677602250" duration="443000" />
       <workItem from="1762532148031" duration="4306000" />
-      <workItem from="1764735733316" duration="7533000" />
+      <workItem from="1764735733316" duration="7682000" />
+      <workItem from="1764743500163" duration="333000" />
     </task>
     <servers />
   </component>
