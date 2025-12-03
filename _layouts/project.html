@@ -22,8 +22,9 @@ layout: default
 
     <section class="project-sections">
         {% for section in page.sections %}
+        {% assign img_url = section.image | relative_url %}
         {% include section-block.html
-        image=section.image
+        image=img_url
         content=section.text
         reverse=section.reverse
         %}
