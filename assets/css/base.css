@@ -459,3 +459,205 @@ footer {
         transform-origin: top center;
     }
 }
+
+/* ===== DEVLOG PAGE ===== */
+
+.devlog-page {
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.65;
+}
+
+.devlog-header {
+    margin-bottom: 32px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.devlog-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 6px;
+}
+
+.devlog-date {
+    font-size: 0.95rem;
+    color: var(--bg-light);
+    margin-bottom: 10px;
+}
+
+.devlog-tag {
+    display: inline-block;
+    background: #ececec;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Content formatting */
+.devlog-content h2 {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+}
+
+.devlog-content h3 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.devlog-content p {
+    margin-bottom: 16px;
+}
+
+.devlog-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 16px 0;
+}
+
+.devlog-nav {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.devlog-nav a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.devlog-nav {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* optional if buttons are close together */
+}
+
+.devlog-nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.devlog-nav a:hover {
+    background-color: var(--accent-dark);
+}
+
+/* ===== Devlog Overview ===== */
+
+.tabbed-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.sprint-button {
+    padding: 10px 18px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sprint-button:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.sprint-button.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* Tab content */
+.sprint-content {
+    padding: 20px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Read more links */
+.read-more {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 12px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.read-more:hover {
+    background-color: #555;
+}
+
+/* Sprint headings */
+.sprint-content h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.sprint-content p em {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Article header */
+article h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Standard page container */
+.page-container {
+    max-width: 820px;        /* same as other pages */
+    margin: 0 auto;           /* centers the content */
+    padding: 40px 20px;       /* consistent padding */
+    line-height: 1.65;
+}
+
+/* Ensure article and tabbed navigation fit nicely */
+.page-container article {
+    text-align: left;          /* matches main content */
+    margin-bottom: 24px;
+}
+
+.tabbed-navigation {
+    justify-content: center;   /* center the buttons horizontally */
+}
+
+/* Tab content */
+.sprint-content {
+    margin-top: 16px;
+    text-align: left;          /* same as other content */
+}

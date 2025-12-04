@@ -1,8 +1,10 @@
 ---
 layout: devlog
-title: "Sprint 1 Blog"
-data: 2024-10-13
+sprint: 1
+title: "The Cornerstones"
+date: 2024-10-13
 categories: blog
+summary: "During sprint 1 we created a preliminary prototype for our game!"
 ---
 ## Introduction
 
@@ -50,7 +52,7 @@ public class ModeEdit : MonoBehaviour
 
 The next task I had was to allow the player to switch between the current building the player wanted to build. This was quite easy as we can just use buttons which will switch the currentStructure variable in the BuildingSystem script to whatever prefab we want. I made sure to hide this UI unless the player was in build mode. This will be refactored later on in the sprint to instead be an entire menu that pops up with building information and costs for every building. Here is a screenshot of how it all looks:
 
-![UI Screencap]({{ site.baseurl }}/files/PrelimUI.PNG){: .post-image}
+![UI Screencap]({{ '/assets/projects/CorDraconis/devlog/PrelimUI.PNG' | relative_url }}){: .post-image}
 
 ### Weekly Meeting #3 (1hr 30min)
 This week's meeting was online due to the fall break, we instead had a Discord meeting to discuss our current progress. I asked Gavin questiosn about his building system and discussed my new UI. Nadav was running late, but we talked about art plans for him (getting building tiles). My next tasks are to add hotkey controls instead of UI elements, continue refining the UI, creating a preliminary building purchase menu, documentation work, as well as writing this very devlog. Gavin will work on getting buildings to do different things, at least have different variables and whatnot so we can implement some functionality before the end of the month.
@@ -135,5 +137,3 @@ This meeting was mostly spent working on a slideshow that we had to make to pres
 
 ### Weekly Meeting #4 (2hr)
 During this meeting we had some time to work and discuss where the project is at with not only each other but with the other R&D team who are working on a beat-em-up inspired mainly by Castle Crashers, but also older games in the genre like Final Fight. We showcased our project and took some questions, it went well. The main thing we have to figure out as a team about the design is if we are going to have adventurers or use a quarry for the main progression of finding Dragon Fossils. Afterwords we had a quick discussion with our Studio Director about the Game Developer's Conference (GDC) which is happening next March. I have always wanted to go and the studio is currently fundraising to get a group of students to go, but I am not a UofM student and will be graduating in December so it's complicated. I am currently in the process of applying to work for GDC which gives me an all access pass and pays me to work. Otherwise, we didn't have much else to discuss, just working on and discussing the project.
-
-## Total Time Spent: 13hr 30min + 2hr 30min for Devlogs

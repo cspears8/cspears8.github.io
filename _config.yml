@@ -1,9 +1,14 @@
 title: "Connor Spears Portfolio"
 description: "My portfolio for game dev"
 url: "https://www.connor-spears.com"
+baseurl: ""
 highlighter: rouge
+rouge:
+  line_numbers: true
+  theme: base16
 collections:
   projects:
     output: true
   devlogs:
     output: true
+    permalink: /devlog/:name/

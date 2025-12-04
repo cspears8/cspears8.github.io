@@ -1,8 +1,10 @@
 ---
 layout: devlog
-title: "Sprint 2 Blog"
-data: 2024-10-30
+sprint: 2
+title: "What Do We Actually Do?"
+date: 2024-10-30
 categories: blog
+summary: "This sprint I worked on more UI as well as a lot of systems design."
 ---
 ## Introduction
 
@@ -67,7 +69,7 @@ public class BuildingMenu : MonoBehaviour
 }
 ```
 
-![Building UI Screencap]({{ site.baseurl }}/files/buildingUI.png){: .post-image}
+![Building UI Screencap]({{ '/assets/projects/CorDraconis/devlog//buildingUI.png' | relative_url }}){: .post-image}
 
 ### Discord Meeting #4 (1hr)
 This was a quick meeting where Gavin and I discussed our progress throughout the week. I showed off my UI while he explained his work on the hex traversal system. The hex traversal system is super impressive, but I definitely don't understand all the math behind that. We figured out what comes next, Gavin will continue working on the pathfinding and getting characters to move across the paths, while I will make designs for each building (cost, effect, levels, etc.) in Notion.
@@ -75,11 +77,11 @@ This was a quick meeting where Gavin and I discussed our progress throughout the
 ### Building Design Doc (5hr)
 I spent a long time thinking of and formatting different designs for each building. When I started the process I was largely guessing how level effects and costs would scale, basically putting in random numbers. This felt wrong, so I looked at other games like Cookie Clicker to see how they scaled costs, these were just multipliers which I was not a fan of. I came across more complex formulas and settled on exponential scaling with weights for each resource type. All I had to do is adjust the weights for each resource, the initial cost, and then check it for each level which got me a scaled output which I rounded. I mapped out the formulas in Desmos and here is what I ended up with:
 
-![Upgrade Cost Scaling]({{ site.baseurl }}/files/costScalingFormula.png){: .post-image}
+![Upgrade Cost Scaling]({{ '/assets/projects/CorDraconis/devlog/costScalingFormula.png' | relative_url }}){: .post-image}
 
 The next step was to design what the buildings would do, I had a lot of fund doing this since it's something I really like doing: Systems design. I thought what would work best and entice the player to upgrade the structures. Each one does something very different for the player, but they all serve the main goal of obtaining the dragon fossils to beat the game. I thought of some designs for the questing system we are creating and used the tavern as its hub. The higher level the tavern the better adventurers you can get which increases your chances of success at beating dungeons and getting progression. The smithy also helps with the questing system by creating gear for adventurers and gold to hire them, higher the level the better the gear and the higher the gold production is. I thought of a bunch of different interactive systems like that. One of the big things we decided on was buildings only having effects within the wizard tower range that it is in. So for example farms will increase the production output of all the buildings within its range (the wizard tower). In this way you are enticed to build multiple of the same structure to get their benefits in a wider area. Here is an example of the design I had for the contractor building which produces stone and allows you to build higher level buildings in its range:
 
-![Contractor Design Table]({{ site.baseurl }}/files/contractorDesignTable.png){: .post-image}
+![Contractor Design Table]({{ '/assets/projects/CorDraconis/devlog/contractorDesignTable.png' | relative_url }}){: .post-image}
 
 ### Weekly Meeting #5 (2hr)
 We didn't have a Discord meeting this week as we were all pretty set on what we were working on. During our studio meeting we discussed the next steps, I would program the different buildings, implementing their designs through script. Gavin would continue working on the questing system. If both of these things could be implemented by our next meeting we would have a fantastic alpha prototype build to get testing feedback on. Most of the main systems would be in the game in at least a prototype state. The whole studio got our pictures taken, and we ended up working more on the project. Later in the meeting our director Connor Chen discussed our progress with us and seemed really impressed by what we had so far, that put us in a good frame of mind for the rest of the week. We discussed our project with the other R&D team who seemed to be having a lot of struggles with their project and the direction it was going in which also made us feel better.
@@ -133,5 +135,3 @@ public class Contractor : Building
 
 ### Weekly Meeting #6 (2hr)
 This meeting was our big showcase date, we had a working build of the game which included building structures, deleting them, sending out adventurers, and producing resources. We got some good feedback for both our design and UI/UX adjustments which we will be working on in the next sprint. We will continue to get more feedback throughout the coming weeks.
-
-## Total Time Spent: 20hr + 2hr for Devlogs

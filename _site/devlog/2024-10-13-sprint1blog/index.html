@@ -1,4 +1,32 @@
-<h2 id="introduction">Introduction</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Cornerstones</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/rouge.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a class="nav-logo" href="/">Connor Spears</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+        </div>
+    </nav>
+</header>
+
+<article class="devlog-page">
+    <header class="devlog-header">
+        <h1>The Cornerstones</h1>
+        <p class="devlog-date">October 13, 2024</p>
+    </header>
+
+    <div class="devlog-content">
+        <h2 id="introduction">Introduction</h2>
 
 <p>This sprint was spent building out a very basic prototype for what a hexagonal tile map building simulator would look like. I have found my self working in my usual lane of UI programming and design, which I enjoy any ways and there is a lot of it to go about with this project.</p>
 
@@ -43,7 +71,7 @@
 
 <p>The next task I had was to allow the player to switch between the current building the player wanted to build. This was quite easy as we can just use buttons which will switch the currentStructure variable in the BuildingSystem script to whatever prefab we want. I made sure to hide this UI unless the player was in build mode. This will be refactored later on in the sprint to instead be an entire menu that pops up with building information and costs for every building. Here is a screenshot of how it all looks:</p>
 
-<p><img src="/files/PrelimUI.PNG" alt="UI Screencap" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/PrelimUI.PNG" alt="UI Screencap" class="post-image" /></p>
 
 <h3 id="weekly-meeting-3-1hr-30min">Weekly Meeting #3 (1hr 30min)</h3>
 <p>This week’s meeting was online due to the fall break, we instead had a Discord meeting to discuss our current progress. I asked Gavin questiosn about his building system and discussed my new UI. Nadav was running late, but we talked about art plans for him (getting building tiles). My next tasks are to add hotkey controls instead of UI elements, continue refining the UI, creating a preliminary building purchase menu, documentation work, as well as writing this very devlog. Gavin will work on getting buildings to do different things, at least have different variables and whatnot so we can implement some functionality before the end of the month.</p>
@@ -127,4 +155,46 @@ An interesting change in the BuildingManager was allowing the user to navigate t
 <h3 id="weekly-meeting-4-2hr">Weekly Meeting #4 (2hr)</h3>
 <p>During this meeting we had some time to work and discuss where the project is at with not only each other but with the other R&amp;D team who are working on a beat-em-up inspired mainly by Castle Crashers, but also older games in the genre like Final Fight. We showcased our project and took some questions, it went well. The main thing we have to figure out as a team about the design is if we are going to have adventurers or use a quarry for the main progression of finding Dragon Fossils. Afterwords we had a quick discussion with our Studio Director about the Game Developer’s Conference (GDC) which is happening next March. I have always wanted to go and the studio is currently fundraising to get a group of students to go, but I am not a UofM student and will be graduating in December so it’s complicated. I am currently in the process of applying to work for GDC which gives me an all access pass and pays me to work. Otherwise, we didn’t have much else to discuss, just working on and discussing the project.</p>
 
-<h2 id="total-time-spent-13hr-30min--2hr-30min-for-devlogs">Total Time Spent: 13hr 30min + 2hr 30min for Devlogs</h2>
+    </div>
+
+    <nav class="devlog-nav">
+        
+        <a class="prev-log" href="/devlog/2024-09-26-sprint0blog/">
+            ← Previous: New Beginnings
+        </a>
+        
+
+        
+        <a class="next-log" href="/devlog/2024-10-30-sprint2blog/">
+            Next: What Do We Actually Do? →
+        </a>
+        
+    </nav>
+</article>
+
+
+<section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+        <a class="contact-card" href="mailto:connorxspears@gmail.com">
+            <img class="contact-icon" src="/assets/images/gmail-logo.png" alt="Email icon">
+            <h3>Email</h3>
+            <p>connorxspears@gmail.com</p>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/connor-spears-5bb23128b/" target="_blank">
+            <img class="contact-icon" src="/assets/images/linkedin-logo.png" alt="LinkedIn icon">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/connor-spears-5bb23128b</p>
+        </a>
+        <a class="contact-card" href="https://github.com/cspears8" target="_blank">
+            <img class="contact-icon" src="/assets/images/github-mark.png" alt="GitHub icon">
+            <h3>GitHub</h3>
+            <p>github.com/cspears8</p>
+        </a>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2026 Connor Spears. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,8 +1,10 @@
 ---
 layout: devlog
-title: "Sprint 4 Blog"
-data: 2024-12-01
+sprint: 4
+title: "Go, Go, Go!"
+date: 2024-12-01
 categories: blog
+summary: "Our last sprint revolved around a lot of finishing up of features and polishing."
 ---
 ## Introduction
 
@@ -59,13 +61,11 @@ There were a couple small bugs with the farm, namely the range rings weren't bei
 ### Art Implementation (30min)
 This was a really self-explanatory task, Nadav finished up the dungeon art, so I put it in the game. Since structures can take up multiple tiles, but that can be hard to design for as an artist, we have a set size for all buildings and then the first tile of the structure is the sprite while the rest are blank tiles which just act as representations of it actually being made up of bigger tiles. Here is how that works, below that is the dungeon in game:
 
-![Dungeon Structure]({{ site.baseurl }}/files/dungeonStructure.png){: .post-image}
+![Dungeon Structure]({{ '/assets/projects/CorDraconis/devlog/dungeonStructure.png' | relative_url }}){: .post-image}
 
-![Dungeon In-Game]({{ site.baseurl }}/files/dungeonInGame.png){: .post-image}
+![Dungeon In-Game]({{ '/assets/projects/CorDraconis/devlog/dungeonInGame.png' | relative_url }}){: .post-image}
 
 ### Main Menu Design (3hr)
 I figured we should probably have some sort of basic main menu for demonstration purposes. Mainly just to outline what we will need in the future for the next semester. This is mostly just editor work where I made some canvas objects and buttons, designed some assets in Figma like arrows. The navigation between menus was quite simple, but making it pretty is a different task. I used a lot of vertical and horizontal layout groups to make sure that every asset was evenly spaced out and well organized for if someone else needed to polish it later. We don't have any assets so this is purely functional. I had to create a lot of card type objects which used some of my web design knowledge. Here's a screenshot of the menu describing the buildings:
 
-![Building Info Menu]({{ site.baseurl }}/files/buildingInfoMenu.png){: .post-image}
-
-### Total Time Spent: 12hr + 1hr for Devlogs
+![Building Info Menu]({{ '/assets/projects/CorDraconis/devlog/buildingInfoMenu.png' | relative_url }}){: .post-image}

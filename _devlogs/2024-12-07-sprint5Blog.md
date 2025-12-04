@@ -1,8 +1,10 @@
 ---
 layout: devlog
-title: "Sprint 5 Blog"
-data: 2024-12-07
+sprint: 5
+title: "What's This Game About Again?"
+date: 2024-12-07
 categories: blog
+summary: "After development, we had to focus entirely on documentation and creating our pitch deck."
 ---
 ## Introduction
 
@@ -17,12 +19,8 @@ We had a quick meeting do discuss what we needed to do on the documentation side
 I spent an entire day drafting up our game design document, from the story and characters to the controls to the UI assets. This was all written in a well-organized Notion document which will be shared with the rest of the group at the next meeting. I had to consider a lot of things we haven't considered as a team since we have been mostly focused on functionality. Those including character designs (personalities, functions), story outlines (story arc and enemy design), and the audience for our game. Here is some examples of how it looks!
 
 #### Enemies Documentation
-![Enemies Documentation]({{ site.baseurl }}/files/enemiesDoc.png){: .post-image}
+![Enemies Documentation]({{ '/assets/projects/CorDraconis/devlog/enemiesDoc.png' | relative_url }}){: .post-image}
 
 
 #### Controls Documentation
-![Controls Documentation]({{ site.baseurl }}/files/controlsDoc.png){: .post-image}
-
-### More to Come!
-
-### Total Time Spent: 12hr + 1hr for Devlogs
+![Controls Documentation]({{ '/assets/projects/CorDraconis/devlog/controlsDoc.png' | relative_url }}){: .post-image}

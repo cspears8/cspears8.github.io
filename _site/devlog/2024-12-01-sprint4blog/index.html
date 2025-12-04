@@ -1,4 +1,32 @@
-<h2 id="introduction">Introduction</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Go, Go, Go!</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/rouge.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a class="nav-logo" href="/">Connor Spears</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+        </div>
+    </nav>
+</header>
+
+<article class="devlog-page">
+    <header class="devlog-header">
+        <h1>Go, Go, Go!</h1>
+        <p class="devlog-date">December 01, 2024</p>
+    </header>
+
+    <div class="devlog-content">
+        <h2 id="introduction">Introduction</h2>
 
 <p>Well, I suppose this is it. The last sprint. This sprint has revolved around a last minute push to get in the rest of the features we need as well as polish for our final presentation.</p>
 
@@ -52,13 +80,55 @@ Farms also spawn trees at a set rate (45 seconds), this was somewhat easy to dev
 <h3 id="art-implementation-30min">Art Implementation (30min)</h3>
 <p>This was a really self-explanatory task, Nadav finished up the dungeon art, so I put it in the game. Since structures can take up multiple tiles, but that can be hard to design for as an artist, we have a set size for all buildings and then the first tile of the structure is the sprite while the rest are blank tiles which just act as representations of it actually being made up of bigger tiles. Here is how that works, below that is the dungeon in game:</p>
 
-<p><img src="/files/dungeonStructure.png" alt="Dungeon Structure" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/dungeonStructure.png" alt="Dungeon Structure" class="post-image" /></p>
 
-<p><img src="/files/dungeonInGame.png" alt="Dungeon In-Game" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/dungeonInGame.png" alt="Dungeon In-Game" class="post-image" /></p>
 
 <h3 id="main-menu-design-3hr">Main Menu Design (3hr)</h3>
 <p>I figured we should probably have some sort of basic main menu for demonstration purposes. Mainly just to outline what we will need in the future for the next semester. This is mostly just editor work where I made some canvas objects and buttons, designed some assets in Figma like arrows. The navigation between menus was quite simple, but making it pretty is a different task. I used a lot of vertical and horizontal layout groups to make sure that every asset was evenly spaced out and well organized for if someone else needed to polish it later. We don’t have any assets so this is purely functional. I had to create a lot of card type objects which used some of my web design knowledge. Here’s a screenshot of the menu describing the buildings:</p>
 
-<p><img src="/files/buildingInfoMenu.png" alt="Building Info Menu" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/buildingInfoMenu.png" alt="Building Info Menu" class="post-image" /></p>
 
-<h3 id="total-time-spent-12hr--1hr-for-devlogs">Total Time Spent: 12hr + 1hr for Devlogs</h3>
+    </div>
+
+    <nav class="devlog-nav">
+        
+        <a class="prev-log" href="/devlog/2024-11-17-sprint3blog/">
+            ← Previous: The Name of the Game: Iteration!
+        </a>
+        
+
+        
+        <a class="next-log" href="/devlog/2024-12-07-sprint5blog/">
+            Next: What's This Game About Again? →
+        </a>
+        
+    </nav>
+</article>
+
+
+<section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+        <a class="contact-card" href="mailto:connorxspears@gmail.com">
+            <img class="contact-icon" src="/assets/images/gmail-logo.png" alt="Email icon">
+            <h3>Email</h3>
+            <p>connorxspears@gmail.com</p>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/connor-spears-5bb23128b/" target="_blank">
+            <img class="contact-icon" src="/assets/images/linkedin-logo.png" alt="LinkedIn icon">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/connor-spears-5bb23128b</p>
+        </a>
+        <a class="contact-card" href="https://github.com/cspears8" target="_blank">
+            <img class="contact-icon" src="/assets/images/github-mark.png" alt="GitHub icon">
+            <h3>GitHub</h3>
+            <p>github.com/cspears8</p>
+        </a>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2026 Connor Spears. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

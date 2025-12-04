@@ -1,4 +1,32 @@
-<h2 id="introduction">Introduction</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What Do We Actually Do?</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/rouge.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav-bar">
+        <a class="nav-logo" href="/">Connor Spears</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+        </div>
+    </nav>
+</header>
+
+<article class="devlog-page">
+    <header class="devlog-header">
+        <h1>What Do We Actually Do?</h1>
+        <p class="devlog-date">October 30, 2024</p>
+    </header>
+
+    <div class="devlog-content">
+        <h2 id="introduction">Introduction</h2>
 
 <p>This sprint was spent doing more UI work as well as a lot of discussion and documentation of the building and adventuring systems</p>
 
@@ -60,7 +88,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><img src="/files/buildingUI.png" alt="Building UI Screencap" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog//buildingUI.png" alt="Building UI Screencap" class="post-image" /></p>
 
 <h3 id="discord-meeting-4-1hr">Discord Meeting #4 (1hr)</h3>
 <p>This was a quick meeting where Gavin and I discussed our progress throughout the week. I showed off my UI while he explained his work on the hex traversal system. The hex traversal system is super impressive, but I definitely don’t understand all the math behind that. We figured out what comes next, Gavin will continue working on the pathfinding and getting characters to move across the paths, while I will make designs for each building (cost, effect, levels, etc.) in Notion.</p>
@@ -68,11 +96,11 @@
 <h3 id="building-design-doc-5hr">Building Design Doc (5hr)</h3>
 <p>I spent a long time thinking of and formatting different designs for each building. When I started the process I was largely guessing how level effects and costs would scale, basically putting in random numbers. This felt wrong, so I looked at other games like Cookie Clicker to see how they scaled costs, these were just multipliers which I was not a fan of. I came across more complex formulas and settled on exponential scaling with weights for each resource type. All I had to do is adjust the weights for each resource, the initial cost, and then check it for each level which got me a scaled output which I rounded. I mapped out the formulas in Desmos and here is what I ended up with:</p>
 
-<p><img src="/files/costScalingFormula.png" alt="Upgrade Cost Scaling" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/costScalingFormula.png" alt="Upgrade Cost Scaling" class="post-image" /></p>
 
 <p>The next step was to design what the buildings would do, I had a lot of fund doing this since it’s something I really like doing: Systems design. I thought what would work best and entice the player to upgrade the structures. Each one does something very different for the player, but they all serve the main goal of obtaining the dragon fossils to beat the game. I thought of some designs for the questing system we are creating and used the tavern as its hub. The higher level the tavern the better adventurers you can get which increases your chances of success at beating dungeons and getting progression. The smithy also helps with the questing system by creating gear for adventurers and gold to hire them, higher the level the better the gear and the higher the gold production is. I thought of a bunch of different interactive systems like that. One of the big things we decided on was buildings only having effects within the wizard tower range that it is in. So for example farms will increase the production output of all the buildings within its range (the wizard tower). In this way you are enticed to build multiple of the same structure to get their benefits in a wider area. Here is an example of the design I had for the contractor building which produces stone and allows you to build higher level buildings in its range:</p>
 
-<p><img src="/files/contractorDesignTable.png" alt="Contractor Design Table" class="post-image" /></p>
+<p><img src="/assets/projects/CorDraconis/devlog/contractorDesignTable.png" alt="Contractor Design Table" class="post-image" /></p>
 
 <h3 id="weekly-meeting-5-2hr">Weekly Meeting #5 (2hr)</h3>
 <p>We didn’t have a Discord meeting this week as we were all pretty set on what we were working on. During our studio meeting we discussed the next steps, I would program the different buildings, implementing their designs through script. Gavin would continue working on the questing system. If both of these things could be implemented by our next meeting we would have a fantastic alpha prototype build to get testing feedback on. Most of the main systems would be in the game in at least a prototype state. The whole studio got our pictures taken, and we ended up working more on the project. Later in the meeting our director Connor Chen discussed our progress with us and seemed really impressed by what we had so far, that put us in a good frame of mind for the rest of the week. We discussed our project with the other R&amp;D team who seemed to be having a lot of struggles with their project and the direction it was going in which also made us feel better.</p>
@@ -126,4 +154,46 @@
 <h3 id="weekly-meeting-6-2hr">Weekly Meeting #6 (2hr)</h3>
 <p>This meeting was our big showcase date, we had a working build of the game which included building structures, deleting them, sending out adventurers, and producing resources. We got some good feedback for both our design and UI/UX adjustments which we will be working on in the next sprint. We will continue to get more feedback throughout the coming weeks.</p>
 
-<h2 id="total-time-spent-20hr--2hr-for-devlogs">Total Time Spent: 20hr + 2hr for Devlogs</h2>
+    </div>
+
+    <nav class="devlog-nav">
+        
+        <a class="prev-log" href="/devlog/2024-10-13-sprint1blog/">
+            ← Previous: The Cornerstones
+        </a>
+        
+
+        
+        <a class="next-log" href="/devlog/2024-11-17-sprint3blog/">
+            Next: The Name of the Game: Iteration! →
+        </a>
+        
+    </nav>
+</article>
+
+
+<section class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+        <a class="contact-card" href="mailto:connorxspears@gmail.com">
+            <img class="contact-icon" src="/assets/images/gmail-logo.png" alt="Email icon">
+            <h3>Email</h3>
+            <p>connorxspears@gmail.com</p>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/connor-spears-5bb23128b/" target="_blank">
+            <img class="contact-icon" src="/assets/images/linkedin-logo.png" alt="LinkedIn icon">
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/connor-spears-5bb23128b</p>
+        </a>
+        <a class="contact-card" href="https://github.com/cspears8" target="_blank">
+            <img class="contact-icon" src="/assets/images/github-mark.png" alt="GitHub icon">
+            <h3>GitHub</h3>
+            <p>github.com/cspears8</p>
+        </a>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2026 Connor Spears. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
