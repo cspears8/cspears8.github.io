@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="" />
+    <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/projects/ProjectPromotion/Tweens.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/ProjectPromotion/ProjectPromotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/projects/ProjectPromotion/ProjectPromotion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/ProjectPromotion/ProjectPromotion.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/ProjectPromotion/ProjectPromotion.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,8 +65,8 @@
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\_site\assets\misc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\DialogueSystem" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\ProjectPromotion" />
+      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\DialogueSystem" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\_devlogs" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\CorDraconis\devlog" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
@@ -118,7 +123,7 @@
       <workItem from="1764771056108" duration="15986000" />
       <workItem from="1764806037230" duration="8657000" />
       <workItem from="1765044724492" duration="610000" />
-      <workItem from="1765567434788" duration="4532000" />
+      <workItem from="1765567434788" duration="6378000" />
     </task>
     <servers />
   </component>

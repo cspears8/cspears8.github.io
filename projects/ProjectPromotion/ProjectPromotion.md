@@ -29,11 +29,12 @@ sections:
       This core structure worked for the majority of our 2D prototype, but once we switched to 3D environments there was a lot that needed changing. Overlay tiles were being generated as sprites which had to be switched to quads. We started using a package called AutoTiles3D to build tilemaps out of 3D objects, this helped the MapManager to figure out where to place OverlayTiles. The part that gave me the most trouble though was switching from the 2D isometric which uses XZ but automatically parses it as XY, to 3D isometric which must be manually converted to XY from XZ. It took me a long time to figure that out, but once I did the system largely translated perfectly to 3D which was great news.
     reverse: true
 
-  - image: ../assets/projects/CorDraconis/buildings.png
+  - image: ../assets/projects/ProjectPromotion/Tweens.PNG
     text: |
       ## Tween Abuse
-      Should put some stuff about building design here.
-      blaksjdf;olkahsd
+      This project was my first real deep dive into using the DOTween package in Unity. I've used it before for small things, but in this project we really amped it up for giving clarity to all the different UI that we needed. Some examples include glowing image borders, bouncing UI elements, flashing different elements, running timers, and coolest of all: creating text effects.
+      
+      I created this script which makes any given text in the game grow and translate along a sine and cosine wave respectively. This creates this really cool wave effect, but I wasn't done with that. I also allowed for the text to change color within the tween, so it gives this great rainbow effect. This was all achieved using just basic trig. I even added some settings for speed, scale, and to turn the color effect off for text that we just wanted to scale. I really love making effects like these and can get caught up in it sometimes since it's so immediately rewarding.
     reverse: false
 
   - image: ../assets/projects/ProjectPromotion/TaskBoard.PNG
