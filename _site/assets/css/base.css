@@ -661,3 +661,46 @@ article p {
     margin-top: 16px;
     text-align: left;          /* same as other content */
 }
+
+
+.section-block {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    align-items: flex-start;
+}
+
+.section-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.section-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.section-text {
+    flex: 1;
+}
+
+.read-more-btn {
+    margin-top: 1rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+.read-more-btn:hover {
+    background: var(--accent-dark);
+}
+
+
+.section-full {
+    margin-top: 1rem;
+}

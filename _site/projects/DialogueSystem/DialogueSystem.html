@@ -42,47 +42,78 @@ Extra text to see a new line.</p>
     <section class="project-sections">
         
         
-        <div class="section-block ">
+
+
+
+
+
+<div class="section-block ">
+    
     <div class="section-image">
         <img src="/assets/projects/DialogueSystem/node.PNG" alt="">
     </div>
+    
+
     <div class="section-text">
-        <h2 id="nodes">Nodes</h2>
+        <div class="section-content">
+            <h2 id="nodes">Nodes</h2>
 <p>Here is some text about the build menu.</p>
 
+        </div>
     </div>
 </div>
 
         
         
-        <div class="section-block reverse">
+
+
+
+
+
+<div class="section-block reverse">
+    
     <div class="section-image">
         <img src="/assets/projects/DialogueSystem/CustomInspector.PNG" alt="">
     </div>
+    
+
     <div class="section-text">
-        <h2 id="custom-inspectors">Custom Inspectors</h2>
+        <div class="section-content">
+            <h2 id="custom-inspectors">Custom Inspectors</h2>
 <p>Here is some text about dungeon generation.
 This should def be the first thing…</p>
 
+        </div>
     </div>
 </div>
 
         
         
-        <div class="section-block ">
+
+
+
+
+
+<div class="section-block ">
+    
     <div class="section-image">
         <img src="/assets/projects/DialogueSystem/UI.PNG" alt="">
     </div>
+    
+
     <div class="section-text">
-        <h2 id="frontend">Frontend</h2>
+        <div class="section-content">
+            <h2 id="frontend">Frontend</h2>
 <p>Should put some stuff about building design here.
 blaksjdf;olkahsd</p>
 
+        </div>
     </div>
 </div>
 
         
     </section>
+
 
     <section class="project-conclusion">
         <p>Some text about the game again to close it out, what I learned
@@ -90,6 +121,52 @@ blhaslkdf;laksdj</p>
 
     </section>
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".section-block").forEach(block => {
+            const image = block.querySelector(".section-image img");
+            const content = block.querySelector(".section-content");
+            if (!content) return;
+
+            // Wait for images to load to get correct height
+            const applyReadMore = () => {
+                const imgHeight = image ? image.offsetHeight : 0;
+                const textHeight = content.scrollHeight;
+
+                // Only collapse if text is taller than image
+                if (textHeight > imgHeight) {
+                    content.style.height = imgHeight + "px";
+                    content.style.overflow = "hidden";
+
+                    const btn = document.createElement("button");
+                    btn.className = "read-more-btn";
+                    btn.textContent = "Read More";
+
+                    btn.addEventListener("click", () => {
+                        const isOpen = content.style.height !== imgHeight + "px";
+                        content.style.height = isOpen ? imgHeight + "px" : content.scrollHeight + "px";
+                        btn.textContent = isOpen ? "Read More" : "Show Less";
+                    });
+
+                    block.querySelector(".section-text").appendChild(btn);
+                }
+            };
+
+            if (image) {
+                if (image.complete) {
+                    applyReadMore();
+                } else {
+                    image.addEventListener("load", applyReadMore);
+                }
+            } else {
+                applyReadMore();
+            }
+        });
+    });
+</script>
+
+
 <section class="contact">
     <h2>Get In Touch</h2>
     <div class="contact-grid">

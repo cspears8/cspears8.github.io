@@ -1,8 +1,19 @@
+{% assign html = include.content | markdownify %}
+{% assign paragraphs = html | split:"</p>" %}
+
+{% assign first_paragraph = paragraphs[0] | append:"</p>" %}
+{% assign remaining = paragraphs | slice: 1, paragraphs.size | join:"</p>" %}
+
 <div class="section-block {% if include.reverse %}reverse{% endif %}">
+    {% if include.image %}
     <div class="section-image">
         <img src="{{ include.image | relative_url }}" alt="">
     </div>
+    {% endif %}
+
     <div class="section-text">
-        {{ include.content | markdownify }}
+        <div class="section-content">
+            {{ include.content | markdownify }}
+        </div>
     </div>
 </div>

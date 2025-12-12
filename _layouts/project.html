@@ -22,16 +22,61 @@ layout: default
 
     <section class="project-sections">
         {% for section in page.sections %}
-        {% assign img_url = section.image | relative_url %}
         {% include section-block.html
-        image=img_url
+        image=section.image
         content=section.text
         reverse=section.reverse
         %}
         {% endfor %}
     </section>
 
+
     <section class="project-conclusion">
         {{ page.conclusion | markdownify }}
     </section>
 </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".section-block").forEach(block => {
+            const image = block.querySelector(".section-image img");
+            const content = block.querySelector(".section-content");
+            if (!content) return;
+
+            // Wait for images to load to get correct height
+            const applyReadMore = () => {
+                const imgHeight = image ? image.offsetHeight : 0;
+                const textHeight = content.scrollHeight;
+
+                // Only collapse if text is taller than image
+                if (textHeight > imgHeight) {
+                    content.style.height = imgHeight + "px";
+                    content.style.overflow = "hidden";
+
+                    const btn = document.createElement("button");
+                    btn.className = "read-more-btn";
+                    btn.textContent = "Read More";
+
+                    btn.addEventListener("click", () => {
+                        const isOpen = content.style.height !== imgHeight + "px";
+                        content.style.height = isOpen ? imgHeight + "px" : content.scrollHeight + "px";
+                        btn.textContent = isOpen ? "Read More" : "Show Less";
+                    });
+
+                    block.querySelector(".section-text").appendChild(btn);
+                }
+            };
+
+            if (image) {
+                if (image.complete) {
+                    applyReadMore();
+                } else {
+                    image.addEventListener("load", applyReadMore);
+                }
+            } else {
+                applyReadMore();
+            }
+        });
+    });
+</script>
+
