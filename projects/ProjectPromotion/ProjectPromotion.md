@@ -5,8 +5,9 @@ subtitle: "A tactics game about beating up your boss."
 cover: ../assets/projects/ProjectPromotion/cover.PNG
 
 intro: |
-  Some text about ProjectPromo should go here.
-  Extra text to see a new line.
+    Itch Page: [https://cookieinferno.itch.io/project-promotion](https://cookieinferno.itch.io/project-promotion)  
+
+    Project Promotion is a tactical role-playing game where you must climb the corporate ladder to confront your boss about your termination! This game was developed over ~5 months, first as a 4 week prototype for MI 455 during my first semester in grad school at MSU, then went into full scale production in the next course MI 497 for an entire semester. The main catch of the game is how it combines tactics games with the classic combat system of the Conditional Turn Battle system. I served as the project manager and systems programmer, where I did everything from doling out tasks, to fixing critical memory leaks. Below are just a couple of things I was responsible for.
 
 sections:
   - image: ../assets/projects/ProjectPromotion/CTB.PNG
@@ -50,6 +51,7 @@ sections:
     reverse: true
 
 conclusion: |
-  Some text about the game again to close it out, what I learned
-  blhaslkdf;laksdj
+    Project Promotion is my most recent project, and the one that I am most proud of. It feels like it is the exact sort of game I always wanted to make when I started down this path of game development. The experience of leading a team and managing a large codebase such as this one has taught me a lot about larger scale development and has made me hungrier for more experiences like this in the AA or Indie sphere.
+    
+    Since 497 has wrapped up, we are not yet finished with Project Promotion. We hope to continue development and release a demo on Steam when we have a chunk of the game we are really happy with. Currently we are at 10 levels and about an hour of gameplay. For demo release we would like to just polish this bit up into something we can show to the whole world!
 ---
