@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="" />
+    <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/misc/spears-Resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/misc/spears-Resume.pdf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,11 +62,11 @@
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\_site\assets\misc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\ProjectPromotion" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\DialogueSystem" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\_devlogs" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\CorDraconis\devlog" />
-      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,6 +121,7 @@
       <workItem from="1764806037230" duration="8657000" />
       <workItem from="1765044724492" duration="610000" />
       <workItem from="1765567434788" duration="8524000" />
+      <workItem from="1767553590049" duration="56000" />
     </task>
     <servers />
   </component>
