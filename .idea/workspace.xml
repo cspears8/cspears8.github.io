@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/CorDraconis/CorDraconis.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/projects/CorDraconis/CorDraconis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/DialogueSystem/DialogueSystem.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/projects/DialogueSystem/DialogueSystem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/CorDraconis/CorDraconis.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/CorDraconis/CorDraconis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/DialogueSystem/DialogueSystem.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/DialogueSystem/DialogueSystem.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
       <workItem from="1765044724492" duration="610000" />
       <workItem from="1765567434788" duration="8524000" />
       <workItem from="1767553590049" duration="426000" />
-      <workItem from="1769034932037" duration="860000" />
+      <workItem from="1769034932037" duration="4091000" />
     </task>
     <servers />
   </component>
