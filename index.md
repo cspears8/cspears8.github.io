@@ -68,16 +68,16 @@ title: "Connor Spears - Systems Programmer and Tech Designer"
         <span class="view-project">View Project →</span>
     </a>
     </div>
-    <!-- <div class="project-card">
+    <!--<div class="project-card">
         <a href="/projects/ProjectPlaylist/ProjectPlaylist.html" class="project-link-wrapper">
             <h3>Project Playlist - Neural Networks Project</h3>
             <div class="video-wrapper">
                 <img src="/assets/projects/DialogueSystem/Dialogue.PNG" alt="Dialogue System screenshot">
             </div>
             <p>
-                Implemented a robust node based dialogue system using Unity's GraphView API. Followed a lengthy tutorial series to get the initial set-up, then iterated, adding features such as a front-end, more data elements, and event functionality.
+                Developed a neural network in Python using TensorFlow and Pandas to classify songs by genre based on audio features. Leveraged the MusicBrainz and AcousticBrainz APIs for data collection and training. The app allows the user to enter a song and artist name and returns the predicted genre based on its values.
             </p>
             <span class="project-link">View Project →</span>
         </a>
-    </div> -->
+    </div>-->
 </section>

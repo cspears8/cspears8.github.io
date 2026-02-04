@@ -15,6 +15,10 @@
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about/">About</a>
+            <span style="padding-left: 1rem">|</span>
+            <a href="/projects/ProjectPromotion/ProjectPromotion">Project Promotion</a>
+            <a href="/projects/DialogueSystem/DialogueSystem">Dialogue System</a>
+            <a href="/projects/CorDraconis/CorDraconis">Cor Draconis</a>
         </div>
     </nav>
 </header>
@@ -48,6 +52,27 @@
 
 <div class="section-block ">
     
+
+    <div class="section-text">
+        <div class="section-content">
+            <h2 id="devlogs">Devlogs</h2>
+<p>Here is a devlog I wrote for the pre-production part of the project during Fall 2024:</p>
+
+<p><a href="/projects/CorDraconis/devlog/">View the Cor Draconis Devlogs →</a></p>
+
+        </div>
+    </div>
+</div>
+
+        
+        
+
+
+
+
+
+<div class="section-block reverse">
+    
     <div class="section-image">
         <img src="/assets/projects/CorDraconis/Dungeon.PNG" alt="">
     </div>
@@ -73,7 +98,7 @@
 
 
 
-<div class="section-block reverse">
+<div class="section-block ">
     
     <div class="section-image">
         <img src="/assets/projects/CorDraconis/BuildMenu.PNG" alt="">
@@ -98,7 +123,7 @@
 
 
 
-<div class="section-block ">
+<div class="section-block reverse">
     
     <div class="section-image">
         <img src="/assets/projects/CorDraconis/buildings.png" alt="">
@@ -111,27 +136,6 @@
 <p>Being a city builder, there had to be multiple different types of buildings which served different purposes. So as designer, I took time to design 5 different buildings in the game all with 5 levels. Buildings included: a farm which boosted production of towers around it, wizard towers which increased the possible size of your town, and smithies which could craft gear for adventurers as well as produce gold.</p>
 
 <p>To figure out costs and upgrade costs, I created a small exponential scaling function within Desmos. Each resource (magic, wood, stone) had it’s base cost as well as a scaling cost which were all multiplied by the level of the upgrade. This allowed some upgrades to start out with heavy wood cost but then scale more towards another resource. This felt a lot better than just arbitrarily guessing on what felt right for costs, it also accounted for increased production the player would have throughout the game.</p>
-
-        </div>
-    </div>
-</div>
-
-        
-        
-
-
-
-
-
-<div class="section-block reverse">
-    
-
-    <div class="section-text">
-        <div class="section-content">
-            <h2 id="devlogs">Devlogs</h2>
-<p>Here is a devlog I wrote for the pre-production part of the project during Fall 2024:</p>
-
-<p><a href="/projects/CorDraconis/devlog/">View the Cor Draconis Devlogs →</a></p>
 
         </div>
     </div>
@@ -161,6 +165,8 @@
                 const imgHeight = image ? image.offsetHeight : 0;
                 const textHeight = content.scrollHeight;
 
+                if(imgHeight === 0) return;  // No image, no need to collapse
+
                 // Only collapse if text is taller than image
                 if (textHeight > imgHeight) {
                     content.style.height = imgHeight + "px";
@@ -172,8 +178,24 @@
 
                     btn.addEventListener("click", () => {
                         const isOpen = content.style.height !== imgHeight + "px";
-                        content.style.height = isOpen ? imgHeight + "px" : content.scrollHeight + "px";
-                        btn.textContent = isOpen ? "Read More" : "Show Less";
+
+                        if (!isOpen) {
+                            // Opening: remember where this block starts
+                            block._expandTop = block.getBoundingClientRect().top + window.scrollY;
+                            content.style.height = content.scrollHeight + "px";
+                            btn.textContent = "Show Less";
+                        } else {
+                            // Closing: collapse and restore scroll position
+                            content.style.height = imgHeight + "px";
+                            btn.textContent = "Read More";
+
+                            if (typeof block._expandTop === "number") {
+                                window.scrollTo({
+                                    top: block._expandTop - 10,
+                                    behavior: "smooth"
+                                });
+                            }
+                        }
                     });
 
                     block.querySelector(".section-text").appendChild(btn);

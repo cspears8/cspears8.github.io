@@ -48,6 +48,8 @@ layout: default
                 const imgHeight = image ? image.offsetHeight : 0;
                 const textHeight = content.scrollHeight;
 
+                if(imgHeight === 0) return;  // No image, no need to collapse
+
                 // Only collapse if text is taller than image
                 if (textHeight > imgHeight) {
                     content.style.height = imgHeight + "px";
@@ -59,8 +61,24 @@ layout: default
 
                     btn.addEventListener("click", () => {
                         const isOpen = content.style.height !== imgHeight + "px";
-                        content.style.height = isOpen ? imgHeight + "px" : content.scrollHeight + "px";
-                        btn.textContent = isOpen ? "Read More" : "Show Less";
+
+                        if (!isOpen) {
+                            // Opening: remember where this block starts
+                            block._expandTop = block.getBoundingClientRect().top + window.scrollY;
+                            content.style.height = content.scrollHeight + "px";
+                            btn.textContent = "Show Less";
+                        } else {
+                            // Closing: collapse and restore scroll position
+                            content.style.height = imgHeight + "px";
+                            btn.textContent = "Read More";
+
+                            if (typeof block._expandTop === "number") {
+                                window.scrollTo({
+                                    top: block._expandTop - 10,
+                                    behavior: "smooth"
+                                });
+                            }
+                        }
                     });
 
                     block.querySelector(".section-text").appendChild(btn);

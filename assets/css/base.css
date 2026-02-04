@@ -89,7 +89,7 @@ html{
 }
 
 section{
-    max-width: 800px;
+    max-width: 1000px;
     margin: 2.5rem auto;
     padding: 0 1rem;
 }
@@ -641,7 +641,7 @@ article p {
 
 /* Standard page container */
 .page-container {
-    max-width: 820px;        /* same as other pages */
+    max-width: 1020px;        /* same as other pages */
     margin: 0 auto;           /* centers the content */
     padding: 40px 20px;       /* consistent padding */
     line-height: 1.65;
