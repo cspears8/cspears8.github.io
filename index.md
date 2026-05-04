@@ -1,12 +1,7 @@
----
-layout: default
-title: "Connor Spears - Systems Programmer and Tech Designer"
----
-
 <section class="hero">
     <!-- Mandelbrot video -->
-    <video class="hero-bg" autoplay loop muted playsinline>
-        <source src="/assets/misc/mandelbrot.mp4" type="video/mp4">
+    <video class="hero-bg" autoplay="" loop="" muted="" playsinline="">
+        <source src="/assets/misc/mandelbrot.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
     <div class="hero-content">
@@ -19,15 +14,23 @@ title: "Connor Spears - Systems Programmer and Tech Designer"
 <section class="projects">
 <h2>Projects</h2>
     <div class="project-card">
-        <a href="/projects/ProjectPromotion/ProjectPromotion.html" class="project-link-wrapper">
-            <h3>Project Promotion – Producer and Systems Programmer</h3>
+        <a href="/projects/PinblastNeon/PinblastNeon.html" class="project-link-wrapper">
+            <h3>Pinblast Neon - Team Lead and Systems Programmer</h3>
             <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/5aSR8uKXmbI" 
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                <iframe src="https://www.youtube.com/embed/0ImbB8-IeUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                </iframe>
+            </div>
+            <p>
+                Led a team of 11 through pre-production experimentation into full production to create a 2D precision platforming game inspired by pinball. My tasks included polish, physics programming, a score system, as well as organizing team meetings with each other and industry professionals.
+            </p>
+            <span class="project-link">View Project →</span>
+        </a>
+    </div>
+    <div class="project-card">
+        <a href="/projects/ProjectPromotion/ProjectPromotion.html" class="project-link-wrapper">
+            <h3>Project Promotion – Team Lead and Systems Programmer</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/5aSR8uKXmbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                 </iframe>
             </div>
             <p>
@@ -42,7 +45,7 @@ title: "Connor Spears - Systems Programmer and Tech Designer"
         <a href="/projects/DialogueSystem/DialogueSystem.html" class="project-link-wrapper">
             <h3>GraphView Dialogue System - Tools Programming</h3>
             <div class="video-wrapper">
-                <img src="/assets/projects/DialogueSystem/Dialogue.PNG" alt="Dialogue System screenshot">
+                <img src="/assets/projects/DialogueSystem/Dialogue.PNG" alt="Dialogue System screenshot" />
             </div>
             <p>
                 Implemented a robust node based dialogue system using Unity's GraphView API. Followed a lengthy tutorial series to get the initial set-up, then iterated, adding features such as a front-end, more data elements, and event functionality.
@@ -54,12 +57,7 @@ title: "Connor Spears - Systems Programmer and Tech Designer"
     <a href="/projects/CorDraconis/CorDraconis.html" class="project-link-wrapper">
         <h3>Cor Draconis - Creative Director</h3>
         <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/zYODM7O47Vc" 
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe src="https://www.youtube.com/embed/zYODM7O47Vc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
             </iframe>
         </div>
         <p>

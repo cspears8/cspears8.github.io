@@ -127,11 +127,15 @@ header{
 }
 
 .site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background: var(--accent-dark);
     color: var(--bg);
     padding: 15px 0;
     margin-bottom: 40px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
 }
 
 .nav-bar {

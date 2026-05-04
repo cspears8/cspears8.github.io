@@ -51,7 +51,7 @@ sections:
     reverse: true
 
 conclusion: |
-    Project Promotion is my most recent project, and the one that I am most proud of. It feels like it is the exact sort of game I always wanted to make when I started down this path of game development. The experience of leading a team and managing a large codebase such as this one has taught me a lot about larger scale development and has made me hungrier for more experiences like this in the AA or Indie sphere.
+    Project Promotion is the project that I am most proud of. It feels like it is the exact sort of game I always wanted to make when I started down this path of game development. The experience of leading a team and managing a large codebase such as this one has taught me a lot about larger scale development and has made me hungrier for more experiences like this in the AA or Indie sphere.
     
     Since 497 has wrapped up, we are not yet finished with Project Promotion. We hope to continue development and release a demo on Steam when we have a chunk of the game we are really happy with. Currently we are at 10 levels and about an hour of gameplay. For demo release we would like to just polish this bit up into something we can show to the whole world!
 ---
