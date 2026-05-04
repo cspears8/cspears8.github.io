@@ -2,7 +2,7 @@
 layout: project
 title: "Pinblast Neon"
 subtitle: "Platforming Meets Pinball."
-cover: ../assets/projects/PinblastNeon/Well.jpg
+cover: ../assets/projects/PinblastNeon/cover.png
 
 intro: |
   Itch Page: [https://cookieinferno.itch.io/pinblastneon](https://cookieinferno.itch.io/pinblastneon)  
