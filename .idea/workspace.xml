@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df4be011-d85d-4108-9b15-3484ab176cae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/PinblastNeon/PinblastNeon.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/PinblastNeon/PinblastNeon.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/misc/spears-Resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/misc/spears-Resume.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,34 +36,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/conno/OneDrive/Documents/GitHub/cspears8.github.io/assets/projects/PinblastNeon&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.test.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/conno/GitHub/cspears8.github.io/_posts/2024-11-17-sprint3Blog.md&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/conno/OneDrive/Documents/GitHub/cspears8.github.io/assets/misc",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.test.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "two.files.diff.last.used.file": "C:/Users/conno/GitHub/cspears8.github.io/_posts/2024-11-17-sprint3Blog.md",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\misc" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\PinblastNeon" />
       <recent name="C:\Users\conno\GitHub\cspears8.github.io\assets\misc" />
       <recent name="C:\Users\conno\GitHub\cspears8.github.io\projects\ProjectPlaylist" />
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\projects\DialogueSystem" />
-      <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\projects\ProjectPromotion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\conno\OneDrive\Documents\GitHub\cspears8.github.io\assets\projects\PinblastNeon" />
@@ -130,6 +130,8 @@
       <workItem from="1770239036408" duration="5017000" />
       <workItem from="1777926394567" duration="8966000" />
       <workItem from="1777938587630" duration="73000" />
+      <workItem from="1785186502102" duration="3470000" />
+      <workItem from="1788103633459" duration="236000" />
     </task>
     <servers />
   </component>
