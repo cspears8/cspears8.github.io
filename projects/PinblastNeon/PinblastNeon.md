@@ -5,7 +5,7 @@ subtitle: "Platforming Meets Pinball."
 cover: ../assets/projects/PinblastNeon/cover.png
 
 intro: |
-  Itch Page: [https://cookieinferno.itch.io/pinblastneon](https://cookieinferno.itch.io/pinblastneon)  
+  Steam Page: [https://store.steampowered.com/app/5216470/Pinblast_NEON/](https://store.steampowered.com/app/5216470/Pinblast_NEON/)  
 
   Pinblast Neon is a 2D precision platformer with pinball elements. The game combines the chaos of pinball with the precision of platformers to create a dynamic and unique play experience. This project was created in a semester as my capstone in the games program at Michigan State University. We are currently still in development with plans for release in December 2026!
 sections:

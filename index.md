@@ -17,7 +17,7 @@
         <a href="/projects/PinblastNeon/PinblastNeon.html" class="project-link-wrapper">
             <h3>Pinblast Neon - Team Lead and Systems Programmer</h3>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/0ImbB8-IeUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                <iframe src="https://www.youtube.com/embed/DtE3Z1PO4gw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
                 </iframe>
             </div>
             <p>
